@@ -99,6 +99,10 @@ export const Experience = () => {
           </RenderTexture>
         </meshBasicMaterial>
       </Text>
+      <Text position-x={0} position-y={-0.3} position-z={1} fontSize={0.1}>
+        Cloudinary Midudev {"\n"}Hackaton
+        <meshBasicMaterial color="white" />
+      </Text>
       <group rotation-y={degToRad(-25)} position-x={3}>
         <Camping scale={0.6} html />
         <mesh ref={meshFitCameraStore} visible={false}>
