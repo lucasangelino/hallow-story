@@ -84,9 +84,16 @@ export const UI = () => {
         >
           <div className="h-[66%]"></div>
           <input
-            type="text"
-            aria-label="Nombre del jugador"
-            placeholder="Cual es tu nombre?"
+            type="file"
+            aria-label="Imagen del jugador"
+            onChange={(e) => {
+              const [file] = e.target.files;
+              const reader = new FileReader();
+              reader.onload = (e) => {
+                setPlayerPicture(e.target.result);
+              };
+              reader.readAsDataURL(file);
+            }}
             className="pointer-events-auto uppercase py-4 px-8
                     text-black font-black border-orange-400 rounded-full
                     cursor-pointer transition-colors duration-500 text-center"
@@ -94,7 +101,7 @@ export const UI = () => {
           {playerName.length > 0 && (
             <button
               onClick={() => {
-                setIntroStep(2);
+                setCurrentPage("store");
               }}
               className="pointer-events-auto uppercase py-4 px-8 bg-orange-400
                     text-white font-black rounded-full hover:bg-orange-600 

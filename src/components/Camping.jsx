@@ -37,6 +37,10 @@ const OverlayItem = ({
       >
         Add to cart ${price}
       </button>
+      <img
+        src="https://c10.patreonusercontent.com/4/patreon-media/p/campaign/4890896/ec9edbc671a44b69a69e5ec8b1e6400c/eyJoIjoxMDgwLCJ3IjoxMDgwfQ%3D%3D/1.JPG?token-time=1728691200&token-hash=idrIZL631VmudHEw-UfZ9ThIS2IpiQQFejNSNeis_rI%3D"
+        alt=""
+      />
     </Html>
   );
 };
