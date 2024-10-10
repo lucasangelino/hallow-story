@@ -3,7 +3,7 @@ import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { Suspense } from "react";
 import { Experience } from "./components/Experience";
 import { UI } from "./components/UI";
-import { AppProvider } from "./context/AppContext";
+import { AppProvider } from "./context/GameContext";
 
 function App() {
   return (

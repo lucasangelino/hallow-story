@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { AppContext } from "../context/AppContext";
+import { GameContext } from "../context/GameContext";
 
-export const useAppContext = () => {
-  const context = useContext(AppContext);
+export const useGameContext = () => {
+  const context = useContext(GameContext);
   if (context === undefined) {
     throw new Error("useAppContext must be used within an AppProvider");
   }
