@@ -75,6 +75,8 @@ export const UI = () => {
   }
 
   if (introStep === 2) {
+    const CLOUD_API =
+      "https://api.cloudinary.com/v1_1/lucasangelino/<resource_type>/upload";
     return (
       <div className="fixed inset-0 pointer-events-none">
         <section
