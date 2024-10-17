@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { atom, useAtom } from "jotai";
-import Dropzone from "dropzone";
 import { useGameContext } from "../hooks/useContext";
-import { Cloudinary } from '@cloudinary/url-gen'
+import { Cloudinary } from "@cloudinary/url-gen";
+import { FilePond, registerPlugin } from "react-filepond";
+import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
+import FilePondPluginImagePreview from "filepond-plugin-image-preview";
+import "filepond/dist/filepond.min.css";
+import {
+  makeDeleteRequest,
+  makeUploadRequest,
+  process,
+  revert,
+} from "../cloudinary/cloudinaryHelper";
 
 export const currentPageAtom = atom("intro");
 const cloudinaryHexColor = "#3448C5";
 
+// registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 const cloudinary = new Cloudinary({
   cloud: {
     cloudName: "lucasangelinodev",
@@ -20,8 +30,11 @@ export const UI = () => {
   const { introStep, setIntroStep, setPlayerName, playerName } =
     useGameContext();
   const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
+  const [files, setFiles] = useState([]);
   const introAudio = new Audio("audio/halloween-intro.mp3");
+  const [image, setImage] = useState(null);
   introAudio.loop = true;
+  introAudio.volume = 0.5;
 
   if (introStep === 0) {
     return (
@@ -74,7 +87,7 @@ export const UI = () => {
                 setIntroStep(2);
               }}
               className="pointer-events-auto uppercase py-4 px-8 bg-orange-400
-                    text-white font-black rounded-full hover:bg-orange-600 
+                    text-white font-black rounded-full hover:bg-orange-600
                     cursor-pointer transition-colors duration-500 my-5"
             >
               Continuar
@@ -87,7 +100,7 @@ export const UI = () => {
 
   if (introStep === 2) {
     const CLOUD_API =
-      "https://api.cloudinary.com/v1_1/lucasangelino/<resource_type>/upload";
+      "https://api.cloudinary.com/v1_1/lucasangelino/image/upload";
     return (
       <div className="fixed inset-0 pointer-events-none">
         <section
@@ -96,31 +109,21 @@ export const UI = () => {
                     ${currentPage === "home" ? "" : "opacity-0"}`}
         >
           <div className="h-[66%]"></div>
-          <form
-            id="dropzone"
-            action="https://api.cloudinary.com/v1_1/lucasangelinodev/image/upload"
-            className="aspect-video shadow-xl border-dashed w-full max-w-xl border-2 p-4 rounded-xl
-            border-gray-200 flex flex-col gap-4 justify-center h-40
-            "
-          >
-            <button
-              id="form_btn"
-              class="pointer-events-none text-gray-400 px-6 py-2"
-            >
-              Select or drop you character picture
-            </button>
-          </form>
 
-          <button
-            onClick={() => {
-              setCurrentPage("store");
-            }}
-            className="pointer-events-auto uppercase py-4 px-8 bg-orange-400
-                    text-white font-black rounded-full hover:bg-orange-600 
-                    cursor-pointer transition-colors duration-500 my-5"
+          <section
+            className="pointer-events-auto uppercase p-1
+                    text-white font-black rounded-xl
+                    cursor-pointer transition-colors duration-500 my-5 w-[500px]"
           >
-            Continuar
-          </button>
+            <FilePond
+              files={image}
+              onupdatefiles={setImage}
+              maxFiles={1}
+              server={{ process, revert }}
+              name="image"
+              // labelIdle='Drag & Drop your files or <span class="filepond--label-action left-0">Browse</span>'
+            />
+          </section>
         </section>
       </div>
     );
