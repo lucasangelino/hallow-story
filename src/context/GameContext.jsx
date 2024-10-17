@@ -5,7 +5,9 @@ GameContext.displayName = "GameContext";
 
 export const AppProvider = ({ children }) => {
   const [playerName, setPlayerName] = useState("");
-  const [playerPicture, setPlayerPicture] = useState("");
+  const [playerPicture, setPlayerPicture] = useState(
+    "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729190976/hallow-story/rg9vaso49sags5ed51xs.jpg"
+  );
   const [mainCharacterPicture, setMainCharacterPicture] = useState("");
   const [currentPage, setCurrentPage] = useState("intro");
   const [currentAudio, setCurrentAudio] = useState(null);
