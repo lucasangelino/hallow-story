@@ -19,20 +19,23 @@ export const AppProvider = ({ children }) => {
     poisons: [],
     powers: [
       {
-        id: "typscript-power-1",
-        name: "TypeScript Power",
-        description:
-          "Permite escribir código tipado. Algo simpple pero poderoso.",
-        image:
-          "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729190976/hallow-story/rg9vaso49sags5ed51xs.jpg",
+        id: "typescript-power-junior",
+        name: "TypeScript Junior",
+        description: "Escribes TypeScript con la documentacion bajo el brazo.",
+        image: "/images/typescript-power-junior.avif",
       },
       {
-        id: "typscript-power-1",
-        name: "TypeScript Power",
-        description:
-          "Permite escribir código tipado. Algo simpple pero poderoso.",
-        image:
-          "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729190976/hallow-story/rg9vaso49sags5ed51xs.jpg",
+        id: "typescript-power-semisenior",
+        name: "TypeScript SemiSenior",
+        description: "La fuerza de TypeScript es fuerte en ti.",
+        image: "/images/typescript-power-semisenior.avif",
+      },
+
+      {
+        id: "typscript-power-ultimate",
+        name: "TypeScript God",
+        description: "Escribes TypeScript con la mente.",
+        image: "/images/typescript-power-ultimate.avif",
       },
     ],
   });
