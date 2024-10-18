@@ -155,74 +155,6 @@ export const UI = () => {
   }
 };
 
-const GameStepOne = () => {
-  console.log("game step 1");
-  const introAudio = new Audio("audio/halloween-intro.mp3");
-  introAudio.loop = true;
-  introAudio.volume = 0.5;
-
-  return (
-    <div className="fixed inset-0 pointer-events-none">
-      <section
-        className={`flex w-full h-full flex-col items-center justify-center
-                  duration-500
-                  ${"currentPage" === "home" ? "" : "opacity-0"}`}
-      >
-        <div className="h-[66%]"></div>
-        <button
-          onClick={() => {
-            introAudio.play();
-            setGameStep(2);
-            // setIntroStep(1);
-          }}
-          className="pointer-events-auto uppercase py-4 px-8 bg-orange-400
-                  text-white font-black rounded-full hover:bg-orange-600 
-                  cursor-pointer transition-colors duration-500 flex flex-row gap-4 items-center"
-        >
-          Comenzar
-        </button>
-      </section>
-    </div>
-  );
-};
-
-const GameStepTwo = () => {
-  return (
-    <div className="fixed inset-0 pointer-events-none">
-      <section
-        className={`flex w-full h-full flex-col items-center justify-center
-                    duration-500
-                    ${"currentPage" === "home" ? "" : "opacity-0"}`}
-      >
-        <div className="h-[66%]"></div>
-        <input
-          type="text"
-          aria-label="Nombre del jugador"
-          onChange={(e) => {
-            setPlayerName(e.target.value);
-          }}
-          placeholder="Cual es tu nombre?"
-          className="pointer-events-auto uppercase py-4 px-8
-                    text-black font-black border-orange-400 rounded-full
-                    cursor-pointer transition-colors duration-500"
-        />
-        {playerName.length > 0 && (
-          <button
-            onClick={() => {
-              setIntroStep(2);
-            }}
-            className="pointer-events-auto uppercase py-4 px-8 bg-orange-400
-                    text-white font-black rounded-full hover:bg-orange-600
-                    cursor-pointer transition-colors duration-500 my-5"
-          >
-            Continuar to step 2
-          </button>
-        )}
-      </section>
-    </div>
-  );
-};
-
 export const GameControls = () => {
   const { enableControls } = useGameContext();
 
@@ -273,11 +205,11 @@ const OpenGameRulesButton = () => {
         width="25"
         height="25"
         viewBox="0 0 24 24"
-        stroke-width="1.5"
+        strokeWidth="1.5"
         stroke="#ffffff"
         fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M4 10a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
@@ -317,11 +249,11 @@ const OpenChestButton = () => {
         width="25"
         height="25"
         viewBox="0 0 24 24"
-        stroke-width="1.5"
+        strokeWidth="1.5"
         stroke="#ffffff"
         fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M6 21l15 -15l-3 -3l-15 15l3 3" />
@@ -332,3 +264,71 @@ const OpenChestButton = () => {
     </button>
   );
 };
+
+// const GameStepOne = () => {
+//   console.log("game step 1");
+//   const introAudio = new Audio("audio/halloween-intro.mp3");
+//   introAudio.loop = true;
+//   introAudio.volume = 0.5;
+
+//   return (
+//     <div className="fixed inset-0 pointer-events-none">
+//       <section
+//         className={`flex w-full h-full flex-col items-center justify-center
+//                   duration-500
+//                   ${"currentPage" === "home" ? "" : "opacity-0"}`}
+//       >
+//         <div className="h-[66%]"></div>
+//         <button
+//           onClick={() => {
+//             introAudio.play();
+//             setGameStep(2);
+//             // setIntroStep(1);
+//           }}
+//           className="pointer-events-auto uppercase py-4 px-8 bg-orange-400
+//                   text-white font-black rounded-full hover:bg-orange-600
+//                   cursor-pointer transition-colors duration-500 flex flex-row gap-4 items-center"
+//         >
+//           Comenzar
+//         </button>
+//       </section>
+//     </div>
+//   );
+// };
+
+// const GameStepTwo = () => {
+//   return (
+//     <div className="fixed inset-0 pointer-events-none">
+//       <section
+//         className={`flex w-full h-full flex-col items-center justify-center
+//                     duration-500
+//                     ${"currentPage" === "home" ? "" : "opacity-0"}`}
+//       >
+//         <div className="h-[66%]"></div>
+//         <input
+//           type="text"
+//           aria-label="Nombre del jugador"
+//           onChange={(e) => {
+//             setPlayerName(e.target.value);
+//           }}
+//           placeholder="Cual es tu nombre?"
+//           className="pointer-events-auto uppercase py-4 px-8
+//                     text-black font-black border-orange-400 rounded-full
+//                     cursor-pointer transition-colors duration-500"
+//         />
+//         {playerName.length > 0 && (
+//           <button
+//             onClick={() => {
+//               setIntroStep(2);
+//             }}
+//             className="pointer-events-auto uppercase py-4 px-8 bg-orange-400
+//                     text-white font-black rounded-full hover:bg-orange-600
+//                     cursor-pointer transition-colors duration-500 my-5"
+//           >
+//             Continuar to step 2
+//           </button>
+//         )}
+//       </section>
+//     </div>
+//   );
+// };
