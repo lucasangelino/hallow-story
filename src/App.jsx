@@ -2,8 +2,11 @@ import { Canvas } from "@react-three/fiber";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { Suspense } from "react";
 import { Experience } from "./components/Experience";
-import { UI } from "./components/UI";
+import { GameControls, UI } from "./components/UI";
 import { AppProvider } from "./context/GameContext";
+import { GameContext } from "./components/GameContext";
+import { GameRules } from "./components/GameRules";
+import { Chest } from "./components/Chest";
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
           </EffectComposer>
         </Canvas>
         <UI />
+        <GameRules />
+        <Chest />
+        <GameControls />
       </AppProvider>
     </>
   );
