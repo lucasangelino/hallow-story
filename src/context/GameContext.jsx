@@ -19,6 +19,18 @@ export const AppProvider = ({ children }) => {
     poisons: [],
     powers: [
       {
+        id: "typescript-power-story",
+        name: "TypeScript Story",
+        description: "Conoces la historia de TypeScript.",
+        image: "/images/typescript-power-story.avif",
+      },
+      {
+        id: "typescript-power-tools",
+        name: "TypeScript Tools",
+        description: "Tienes las herramientas de TypeScript correctas.",
+        image: "/images/typescript-tools.avif",
+      },
+      {
         id: "typescript-power-junior",
         name: "TypeScript Junior",
         description: "Escribes TypeScript con la documentacion bajo el brazo.",
@@ -30,7 +42,13 @@ export const AppProvider = ({ children }) => {
         description: "La fuerza de TypeScript es fuerte en ti.",
         image: "/images/typescript-power-semisenior.avif",
       },
-
+      {
+        id: "typescript-power-senior",
+        name: "TypeScript Senior",
+        description:
+          "Tienes TypeScript en la sangre. Eres un maestro del tipado.",
+        image: "/images/typescript-power-senior.avif",
+      },
       {
         id: "typscript-power-ultimate",
         name: "TypeScript God",
