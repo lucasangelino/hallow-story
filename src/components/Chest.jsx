@@ -2,48 +2,25 @@ import { useGameContext } from "../hooks/useContext";
 import { GameContext } from "./GameContext";
 
 export const Chest = () => {
-  const { openChest } = useGameContext();
-  const playerPoisons = [
-    {
-      id: "poison-js",
-      name: "Poisson super JavaScript",
-      description: "Permite escribir codido Js mas rapido",
-      image:
-        "https://res.cloudinary.com/dkcbxnhg0/image/upload/v1633940876/health_potion",
-    },
-  ];
+  const { playerBucket, setPlayerBucket, openChest } = useGameContext();
   return (
     <GameContext isOpen={openChest}>
       <section>
-        {[] === 0 ? (
-          <h2>Parece que aun no tiene posiones dev</h2>
-        ) : (
-          <h2>Tienes {"poissons.lenght"} posiones</h2>
-        )}
-        <section className="grid ">
-          {playerPoisons.map((poison) => (
-            <article key={poison.id} className="flex flex-col gap-2">
-              <span className="rounded-full bg-orange-500 p-1 inline-block">
-                <svg
-                  class="inline-block"
-                  width="35"
-                  height="35"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="#000000"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M9 3l6 0" />
-                  <path d="M10 9l4 0" />
-                  <path d="M10 3v6l-4 11a.7 .7 0 0 0 .5 1h11a.7 .7 0 0 0 .5 -1l-4 -11v-6" />
-                </svg>
-              </span>
-              <h3>{poison.name}</h3>
+        <h2 className="text-3xl text-center mb-5">Equipamiento</h2>
+        <span className="text-xl text-center">
+          Aqui encontraras la lista de elementos que te permitiran cumplir los
+          objetivos
+        </span>
+        <div className="h-1 w-full bg-slate-400 my-4"></div>
+        <section className="grid grid-cols-5">
+          {playerBucket.poisons.map((poison, index) => (
+            <section
+              key={index}
+              className="bg-slate-300 p-4 m-4 text-center rounded-lg"
+            >
+              <h3 className="text-xl">{poison.name}</h3>
               <p>{poison.description}</p>
-            </article>
+            </section>
           ))}
         </section>
       </section>
