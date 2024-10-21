@@ -10,7 +10,7 @@ export const HTML = ({ children, ...props }) => {
       distanceFactor={1.2}
       center
       className={`w-48 rounded-md overflow-hidden ${
-        currentPage === "store" ? "" : "opacity-0"
+        currentPage === "CEMENTERY" ? "" : "opacity-0"
       } transition-opacity duration-1000 ${className}`}
       {...props}
     >

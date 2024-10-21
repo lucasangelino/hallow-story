@@ -4,7 +4,7 @@ import { useGameContext } from "../hooks/useContext";
 import { CloudinaryUpload } from "./CloudinaryUpload";
 import { CharacterCard } from "./CharacterCard";
 
-export const currentPageAtom = atom("intro");
+export const currentPageAtom = atom("INTRO");
 const cloudinaryHexColor = "#3448C5";
 
 export const UI = () => {
@@ -30,7 +30,7 @@ export const UI = () => {
         <section
           className={`flex w-full h-full flex-col items-center justify-center
                     duration-500
-                    ${currentPage === "home" ? "" : "opacity-0"}`}
+                    ${currentPage === "ENTRY_POINT" ? "" : "opacity-0"}`}
         >
           <div className="h-[66%]"></div>
           <button
@@ -55,7 +55,7 @@ export const UI = () => {
         <section
           className={`flex w-full h-full flex-col items-center justify-center
                     duration-500
-                    ${currentPage === "home" ? "" : "opacity-0"}`}
+                    ${currentPage === "ENTRY_POINT" ? "" : "opacity-0"}`}
         >
           <div className="h-[66%]"></div>
           <input
@@ -92,7 +92,7 @@ export const UI = () => {
         <section
           className={`flex w-full h-full flex-col items-center justify-center
                     duration-500
-                    ${currentPage === "home" ? "" : "opacity-0"}`}
+                    ${currentPage === "ENTRY_POINT" ? "" : "opacity-0"}`}
         >
           <div className="h-[66%]"></div>
 
@@ -104,7 +104,7 @@ export const UI = () => {
             {/* <CloudinaryUpload /> */}
             <button
               onClick={() => {
-                // setCurrentPage("store");
+                // setCurrentPage("CEMENTERY");
                 setIntroStep(3);
               }}
               className="pointer-events-auto uppercase py-4 px-8 bg-orange-400
@@ -125,7 +125,7 @@ export const UI = () => {
         <section
           className={`flex w-full h-full flex-col items-center justify-center
                     duration-500
-                    ${currentPage === "home" ? "" : "opacity-0"}`}
+                    ${currentPage === "ENTRY_POINT" ? "" : "opacity-0"}`}
         >
           <div className="h-[66%]"></div>
 
@@ -139,8 +139,7 @@ export const UI = () => {
               onClick={() => {
                 setEnableControls(true);
                 setOpenGameRules(true);
-                console.log("open game rules");
-                setCurrentPage("store");
+                setCurrentPage("CEMENTERY");
               }}
               className="pointer-events-auto uppercase py-4 px-8 bg-orange-400
                     text-white font-black rounded-full hover:bg-orange-600

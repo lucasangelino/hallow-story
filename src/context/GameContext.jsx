@@ -6,10 +6,10 @@ GameContext.displayName = "GameContext";
 export const AppProvider = ({ children }) => {
   const [playerName, setPlayerName] = useState("");
   const [playerPicture, setPlayerPicture] = useState(
-    "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729190976/hallow-story/rg9vaso49sags5ed51xs.jpg"
+    "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729536847/hackaton/bovozb6b4fetvivs8l9g.avif"
   );
   const [mainCharacterPicture, setMainCharacterPicture] = useState("");
-  const [currentPage, setCurrentPage] = useState("intro");
+  const [currentPage, setCurrentPage] = useState("INTRO");
   const [currentAudio, setCurrentAudio] = useState(null);
   const [openChest, setOpenChest] = useState(false);
   const [openGameRules, setOpenGameRules] = useState(false);

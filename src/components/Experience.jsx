@@ -30,7 +30,7 @@ export const Experience = () => {
   useFrame((_, delta) => {
     textMaterial.current.opacity = lerp(
       textMaterial.current.opacity,
-      currentPage === "home" || currentPage === "intro" ? 1 : 0,
+      currentPage === "ENTRY_POINT" || currentPage === "INTRO" ? 1 : 0,
       delta * 1.5
     );
   });
@@ -39,13 +39,13 @@ export const Experience = () => {
     controls.current.dolly(-22);
     controls.current.smoothTime = 1.6;
     setTimeout(() => {
-      setCurrentPage("home");
+      setCurrentPage("ENTRY_POINT");
     }, 1200);
     fitCamera();
   };
 
   const fitCamera = async () => {
-    if (currentPage === "store") {
+    if (currentPage === "CEMENTERY") {
       controls.current.smoothTime = 0.8;
       controls.current.maxDistance = 5;
       controls.current.fitToBox(meshFitCameraPicCharacter.current, true);
