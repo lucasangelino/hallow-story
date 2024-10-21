@@ -6,6 +6,7 @@ import {
   RenderTexture,
   Text,
   useFont,
+  PerspectiveCamera,
 } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useAtom } from "jotai";
@@ -14,6 +15,7 @@ import { Color } from "three";
 import { degToRad, lerp } from "three/src/math/MathUtils";
 import { Camping } from "./Camping";
 import { currentPageAtom } from "./UI";
+import { Cementery } from "./Cementery";
 
 const bloomColor = new Color("#fff");
 bloomColor.multiplyScalar(1.5);
@@ -21,7 +23,7 @@ bloomColor.multiplyScalar(1.5);
 export const Experience = () => {
   const controls = useRef();
   const meshFitCameraHome = useRef();
-  const meshFitCameraStore = useRef();
+  const meshFitCameraPicCharacter = useRef();
   const textMaterial = useRef();
   const [currentPage, setCurrentPage] = useAtom(currentPageAtom);
 
@@ -45,7 +47,8 @@ export const Experience = () => {
   const fitCamera = async () => {
     if (currentPage === "store") {
       controls.current.smoothTime = 0.8;
-      controls.current.fitToBox(meshFitCameraStore.current, true);
+      controls.current.maxDistance = 5;
+      controls.current.fitToBox(meshFitCameraPicCharacter.current, true);
     } else {
       controls.current.smoothTime = 1.6;
       controls.current.fitToBox(meshFitCameraHome.current, true);
@@ -103,13 +106,36 @@ export const Experience = () => {
         Cloudinary Midudev {"\n"}Hackaton
         <meshBasicMaterial color="white" />
       </Text>
-      <group rotation-y={degToRad(-25)} position-x={3}>
+      {/* <group rotation-y={degToRad(-25)} position-x={3}>
         <Camping scale={0.6} html />
         <mesh ref={meshFitCameraStore} visible={false}>
           <boxGeometry args={[2, 1, 2]} />
           <meshBasicMaterial color="red" transparent opacity={0.5} />
         </mesh>
+      </group> */}
+
+      <group rotation-y={degToRad(-100)} position-x={1}>
+        <Cementery position-x={0.1} position-z={-0.8} scale={0.1} html />
+        <mesh
+          ref={meshFitCameraPicCharacter}
+          visible={false}
+          position-x={0.8}
+          position-z={-0.8}
+          position-y={0.5}
+          rotation-y={degToRad(45)}
+        >
+          <boxGeometry args={[0.5, 0.5, 0.5]} />
+          <meshBasicMaterial color="red" transparent opacity={0.5} />
+        </mesh>
       </group>
+
+      {/* <group rotation-y={degToRad(-25)} position-x={3}>
+        <Cementery position-x={2.5} position-z={-0} scale={0.1} html />
+        <mesh ref={meshFitCameraStore} visible={true}>
+          <boxGeometry args={[2, 1, 2]} />
+          <meshBasicMaterial color="red" transparent opacity={0.5} />
+        </mesh>
+      </group> */}
       <mesh position-y={-0.48} rotation-x={-Math.PI / 2}>
         <planeGeometry args={[100, 100]} />
         <MeshReflectorMaterial
@@ -127,7 +153,7 @@ export const Experience = () => {
           metalness={0.5}
         />
       </mesh>
-      <Environment preset="sunset" />
+      <Environment preset="forest" />
     </>
   );
 };

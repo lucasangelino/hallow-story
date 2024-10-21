@@ -11,7 +11,7 @@ export const AppProvider = ({ children }) => {
   const [mainCharacterPicture, setMainCharacterPicture] = useState("");
   const [currentPage, setCurrentPage] = useState("intro");
   const [currentAudio, setCurrentAudio] = useState(null);
-  const [openChest, setOpenChest] = useState(true);
+  const [openChest, setOpenChest] = useState(false);
   const [openGameRules, setOpenGameRules] = useState(false);
   const [introStep, setIntroStep] = useState(0);
   const [enableControls, setEnableControls] = useState(false);
