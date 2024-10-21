@@ -12,7 +12,7 @@ import { useGameContext } from "../hooks/useContext";
 
 export function Cementery({ html, ...props }) {
   const { nodes, materials } = useGLTF("/models/CemeteryScene.glb");
-  const { playerBucket, setPlayerBucket, openChest } = useGameContext();
+  const { playerName } = useGameContext();
 
   return (
     <group {...props} dispose={null}>
@@ -29,11 +29,11 @@ export function Cementery({ html, ...props }) {
               position-y={8.5}
               title={"Midudev"}
               description={
-                "Detective especialista. Tiene su propia conferencia de programacion. Muy ocupado, no creo que nos pueda ayudar"
+                "Detective especialista. Tiene su propia conferencia de programacion llamada MiduConf. Muy ocupado, no creo que nos pueda ayudar"
               }
               onClick={() => console.log("Midudev")}
               imgSrc={
-                "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729535268/hackaton/xtjbfhanqsihbg9y4ntx.avif"
+                "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729536847/hackaton/bovozb6b4fetvivs8l9g.avif"
               }
             />
           )}
@@ -42,13 +42,13 @@ export function Cementery({ html, ...props }) {
               position-x={-4}
               position-z={-5}
               position-y={8.5}
-              title={"Midudev"}
+              title={playerName}
               description={
-                "Detective especialista. Tiene su propia conferencia de programacion. Muy ocupado, no creo que nos pueda ayudar"
+                "Detective principiante. Sabe algo de programacion. Podria ayudarnos a resolver el caso, pero tendras que ayudarlo con los retos."
               }
-              onClick={() => console.log("Midudev")}
+              onClick={() => console.log(playerName)}
               imgSrc={
-                "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729535268/hackaton/xtjbfhanqsihbg9y4ntx.avif"
+                "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729538143/hackaton/kobfs5skxazebupx4qww.avif"
               }
             />
           )}
@@ -58,11 +58,11 @@ export function Cementery({ html, ...props }) {
               position-x={-4}
               position-z={3}
               position-y={8.5}
-              title={"Midudev"}
+              title={"Colby"}
               description={
-                "Detective especialista. Tiene su propia conferencia de programacion. Muy ocupado, no creo que nos pueda ayudar"
+                "Detective especialista. Director en Cloudinary. Experto en analisis de imagenes. Muy ocupado, no creo que nos pueda ayudar"
               }
-              onClick={() => console.log("Midudev")}
+              onClick={() => console.log(playerName)}
               imgSrc={
                 "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729535268/hackaton/xtjbfhanqsihbg9y4ntx.avif"
               }
