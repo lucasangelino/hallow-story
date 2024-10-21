@@ -7,6 +7,7 @@ import React from "react";
 import { useGLTF } from "@react-three/drei";
 import { degToRad } from "three/src/math/MathUtils";
 import { HTML } from "./HTML";
+import { CharacterProfile } from "./charaters/CharacterProfile";
 
 export function Cementery({ html, ...props }) {
   const { nodes, materials } = useGLTF("/models/CemeteryScene.glb");
@@ -37,22 +38,16 @@ export function Cementery({ html, ...props }) {
             // </HTML>
           )}
           {html && (
-            <OverlayItem
-              position-x={-4}
-              position-z={-0.5}
-              position-y={8.5}
-              rotation-y={degToRad(90)}
-              title={""}
+            <CharacterProfile
+              title={"Midudev"}
               description={
-                "Detective especialista. Director en DevX en Cloudinary. Esta muy ocupado trabajando, no creo que nos pueda ayudar"
+                "Detective especialista. Tiene su propia conferencia de programacion. Muy ocupado, no creo que nos pueda ayudar"
               }
-              price={"Elegir"}
-              bgColor={"bg-yellow-500"}
-              className={"transition delay-1000"}
+              onClick={() => console.log("Midudev")}
+              imgSrc={
+                "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729535268/hackaton/xtjbfhanqsihbg9y4ntx.avif"
+              }
             />
-            // <HTML>
-            //   <h1>Midudev</h1>
-            // </HTML>
           )}
 
           {html && (

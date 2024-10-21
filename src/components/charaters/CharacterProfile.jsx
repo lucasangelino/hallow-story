@@ -1,17 +1,20 @@
 import { OverlayItem } from "../OverlayItem";
+import { degToRad } from "three/src/math/MathUtils";
 
-export const CharacterProfile = () => {
+export const CharacterProfile = ({ title, description, onClick, imgSrc }) => {
+  // const useEffect(() => {
+
+  // }, [imgSrc])
+
   return (
     <OverlayItem
       position-x={-4}
       position-z={-0.5}
       position-y={8.5}
       rotation-y={degToRad(90)}
-      title={""}
-      description={
-        "Detective especialista. Director en DevX en Cloudinary. Esta muy ocupado trabajando, no creo que nos pueda ayudar"
-      }
-      price={"Elegir"}
+      title={title}
+      description={description}
+      onChooseCharacter={onClick}
       bgColor={"bg-yellow-500"}
       className={"transition delay-1000"}
     />
