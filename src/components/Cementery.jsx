@@ -8,9 +8,12 @@ import { useGLTF } from "@react-three/drei";
 import { degToRad } from "three/src/math/MathUtils";
 import { HTML } from "./HTML";
 import { CharacterProfile } from "./charaters/CharacterProfile";
+import { useGameContext } from "../hooks/useContext";
 
 export function Cementery({ html, ...props }) {
   const { nodes, materials } = useGLTF("/models/CemeteryScene.glb");
+  const { playerBucket, setPlayerBucket, openChest } = useGameContext();
+
   return (
     <group {...props} dispose={null}>
       <group>
@@ -20,22 +23,25 @@ export function Cementery({ html, ...props }) {
           material={materials.Cementary_mat1}
         >
           {html && (
-            <OverlayItem
+            <CharacterProfile
               position-x={-4}
-              position-z={-5}
+              position-z={-1}
               position-y={8.5}
-              rotation-y={degToRad(90)}
               title={"Midudev"}
               description={
                 "Detective especialista. Tiene su propia conferencia de programacion. Muy ocupado, no creo que nos pueda ayudar"
               }
-              price={"Elegir"}
-              bgColor={"bg-yellow-500"}
-              className={"transition delay-1000"}
+              onClick={() => console.log("Midudev")}
+              imgSrc={
+                "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729535268/hackaton/xtjbfhanqsihbg9y4ntx.avif"
+              }
             />
           )}
           {html && (
             <CharacterProfile
+              position-x={-4}
+              position-z={-5}
+              position-y={8.5}
               title={"Midudev"}
               description={
                 "Detective especialista. Tiene su propia conferencia de programacion. Muy ocupado, no creo que nos pueda ayudar"
@@ -48,22 +54,19 @@ export function Cementery({ html, ...props }) {
           )}
 
           {html && (
-            <OverlayItem
+            <CharacterProfile
               position-x={-4}
-              position-z={4}
+              position-z={3}
               position-y={8.5}
-              rotation-y={degToRad(90)}
-              title={"Colby"}
+              title={"Midudev"}
               description={
-                "Detective especialista. Director en DevX en Cloudinary. Esta muy ocupado trabajando, no creo que nos pueda ayudar"
+                "Detective especialista. Tiene su propia conferencia de programacion. Muy ocupado, no creo que nos pueda ayudar"
               }
-              price={"Elegir"}
-              bgColor={"bg-yellow-500"}
-              className={"transition delay-1000"}
+              onClick={() => console.log("Midudev")}
+              imgSrc={
+                "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729535268/hackaton/xtjbfhanqsihbg9y4ntx.avif"
+              }
             />
-            // <HTML>
-            //   <h1>Midudev</h1>
-            // </HTML>
           )}
         </mesh>
       </group>

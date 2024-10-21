@@ -15,9 +15,9 @@ export const OverlayItem = ({
 }) => {
   const [currentPage] = useAtom(currentPageAtom);
 
-  const handleClick = useCallback(() => {
-    onClick();
-  }, [onClick]);
+  // const handleClick = useCallback(() => {
+  //   onClick();
+  // }, [onClick]);
 
   return (
     <Html

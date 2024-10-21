@@ -1,7 +1,13 @@
 import { OverlayItem } from "../OverlayItem";
 import { degToRad } from "three/src/math/MathUtils";
 
-export const CharacterProfile = ({ title, description, onClick, imgSrc }) => {
+export const CharacterProfile = ({
+  title,
+  description,
+  onClick,
+  imgSrc,
+  ...props
+}) => {
   // const useEffect(() => {
 
   // }, [imgSrc])
@@ -18,6 +24,7 @@ export const CharacterProfile = ({ title, description, onClick, imgSrc }) => {
       onChooseCharacter={onClick}
       bgColor={"bg-yellow-500"}
       className={"transition delay-1000"}
+      {...props}
     />
   );
 };
