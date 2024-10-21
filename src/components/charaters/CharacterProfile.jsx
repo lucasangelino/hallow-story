@@ -13,6 +13,7 @@ export const CharacterProfile = ({ title, description, onClick, imgSrc }) => {
       position-y={8.5}
       rotation-y={degToRad(90)}
       title={title}
+      imgSrc={imgSrc}
       description={description}
       onChooseCharacter={onClick}
       bgColor={"bg-yellow-500"}

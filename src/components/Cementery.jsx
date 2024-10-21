@@ -33,9 +33,6 @@ export function Cementery({ html, ...props }) {
               bgColor={"bg-yellow-500"}
               className={"transition delay-1000"}
             />
-            // <HTML>
-            //   <h1>Midudev</h1>
-            // </HTML>
           )}
           {html && (
             <CharacterProfile

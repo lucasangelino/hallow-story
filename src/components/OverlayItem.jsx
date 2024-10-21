@@ -8,6 +8,8 @@ export const OverlayItem = ({
   description,
   price,
   bgColor,
+  onClick,
+  imgSrc,
   ...props
 }) => {
   const [currentPage] = useAtom(currentPageAtom);
@@ -21,12 +23,7 @@ export const OverlayItem = ({
       } transition-opacity duration-1000 ${className}`}
       {...props}
     >
-      <img
-        src={
-          "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729535268/hackaton/xtjbfhanqsihbg9y4ntx.avif"
-        }
-        alt=""
-      />
+      <img src={imgSrc} alt={title} />
       <div className="bg-white bg-opacity-50 backdrop-blur-lg text-xs p-2 w-full">
         <h2 className="font-bold">{title}</h2>
         <p>{description}</p>
