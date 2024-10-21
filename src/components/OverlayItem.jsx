@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { currentPageAtom } from "./UI";
 import { Html } from "@react-three/drei";
 import { useAtom } from "jotai";
@@ -13,6 +14,11 @@ export const OverlayItem = ({
   ...props
 }) => {
   const [currentPage] = useAtom(currentPageAtom);
+
+  const handleClick = useCallback(() => {
+    onClick();
+  }, [onClick]);
+
   return (
     <Html
       transform
@@ -31,7 +37,7 @@ export const OverlayItem = ({
       <button
         className={`${bgColor} hover:bg-opacity-50 transition-colors duration-500 px-4 py-2 font-bold text-white w-full text-xs`}
       >
-        {price}
+        Elegir Detective
       </button>
     </Html>
   );
