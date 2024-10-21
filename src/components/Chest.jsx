@@ -6,11 +6,8 @@ export const Chest = () => {
   return (
     <GameContext isOpen={openChest}>
       <section className="p-2 overflow-hidden">
-        <h2 className="text-3xl text-center mb-5">Equipamiento</h2>
-        <span className="text-xl text-center">
-          Aqui encontraras la lista de elementos que te permitiran cumplir los
-          objetivos
-        </span>
+        <h2 className="text-3xl text-center mb-5">Equipo & Libreta</h2>
+        <span className="text-xl text-center">Aqui</span>
         <div className="h-1 w-full bg-blue-400 my-4"></div>
         <h3 className="text-xl">Poderes</h3>
         <section className="grid grid-cols-2 gap-2 mb-10">
