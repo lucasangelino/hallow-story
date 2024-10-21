@@ -12,7 +12,11 @@ import { useGameContext } from "../hooks/useContext";
 
 export function Cementery({ html, ...props }) {
   const { nodes, materials } = useGLTF("/models/CemeteryScene.glb");
-  const { playerName } = useGameContext();
+  const { playerName, setOpenChest } = useGameContext();
+
+  const handleClick = () => {
+    setOpenChest(true);
+  };
 
   return (
     <group {...props} dispose={null}>
@@ -27,7 +31,9 @@ export function Cementery({ html, ...props }) {
               position-x={-4}
               position-z={-1}
               position-y={8.5}
+              disable={true}
               title={"Midudev"}
+              disallow={true}
               description={
                 "Detective especialista. Tiene su propia conferencia de programacion llamada MiduConf. Muy ocupado, no creo que nos pueda ayudar"
               }
@@ -46,7 +52,7 @@ export function Cementery({ html, ...props }) {
               description={
                 "Detective principiante. Sabe algo de programacion. Podria ayudarnos a resolver el caso, pero tendras que ayudarlo con los retos."
               }
-              onClick={() => console.log(playerName)}
+              onClick={handleClick}
               imgSrc={
                 "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729538143/hackaton/kobfs5skxazebupx4qww.avif"
               }
@@ -58,11 +64,12 @@ export function Cementery({ html, ...props }) {
               position-x={-4}
               position-z={3}
               position-y={8.5}
+              disable={true}
               title={"Colby"}
               description={
                 "Detective especialista. Director en Cloudinary. Experto en analisis de imagenes. Muy ocupado, no creo que nos pueda ayudar"
               }
-              onClick={() => console.log(playerName)}
+              onClick={() => console.log("colby")}
               imgSrc={
                 "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729535268/hackaton/xtjbfhanqsihbg9y4ntx.avif"
               }

@@ -16,6 +16,7 @@ import { degToRad, lerp } from "three/src/math/MathUtils";
 import { Camping } from "./Camping";
 import { currentPageAtom } from "./UI";
 import { Cementery } from "./Cementery";
+import { Scenes } from "./scenes/index.js";
 
 const bloomColor = new Color("#fff");
 bloomColor.multiplyScalar(1.5);
@@ -30,7 +31,9 @@ export const Experience = () => {
   useFrame((_, delta) => {
     textMaterial.current.opacity = lerp(
       textMaterial.current.opacity,
-      currentPage === "ENTRY_POINT" || currentPage === "INTRO" ? 1 : 0,
+      currentPage === Scenes.ENTRY_POINT || currentPage === Scenes.intro
+        ? 1
+        : 0,
       delta * 1.5
     );
   });
@@ -39,13 +42,13 @@ export const Experience = () => {
     controls.current.dolly(-22);
     controls.current.smoothTime = 1.6;
     setTimeout(() => {
-      setCurrentPage("ENTRY_POINT");
+      setCurrentPage(Scenes.ENTRY_POINT);
     }, 1200);
     fitCamera();
   };
 
   const fitCamera = async () => {
-    if (currentPage === "CEMENTERY") {
+    if (currentPage === Scenes.CEMENTERY) {
       controls.current.smoothTime = 0.8;
       controls.current.maxDistance = 5;
       controls.current.fitToBox(meshFitCameraPicCharacter.current, true);

@@ -6,6 +6,7 @@ export const CharacterProfile = ({
   description,
   onClick,
   imgSrc,
+  disable,
   ...props
 }) => {
   // const useEffect(() => {
@@ -14,6 +15,7 @@ export const CharacterProfile = ({
 
   return (
     <OverlayItem
+      disable={disable}
       position-x={-4}
       position-z={-0.5}
       position-y={8.5}
@@ -24,6 +26,7 @@ export const CharacterProfile = ({
       onChooseCharacter={onClick}
       bgColor={"bg-yellow-500"}
       className={"transition delay-1000"}
+      onClick={onClick}
       {...props}
     />
   );

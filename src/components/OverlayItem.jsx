@@ -11,13 +11,10 @@ export const OverlayItem = ({
   bgColor,
   onClick,
   imgSrc,
+  disable,
   ...props
 }) => {
   const [currentPage] = useAtom(currentPageAtom);
-
-  // const handleClick = useCallback(() => {
-  //   onClick();
-  // }, [onClick]);
 
   return (
     <Html
@@ -35,9 +32,11 @@ export const OverlayItem = ({
         <p>{description}</p>
       </div>
       <button
+        disabled={disable}
+        onClick={onClick}
         className={`${bgColor} hover:bg-opacity-50 transition-colors duration-500 px-4 py-2 font-bold text-white w-full text-xs`}
       >
-        Elegir Detective
+        {disable ? "Resolviendo otro caso" : `Elegir detective`}
       </button>
     </Html>
   );
