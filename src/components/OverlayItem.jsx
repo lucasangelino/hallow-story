@@ -14,7 +14,7 @@ export const OverlayItem = ({
   return (
     <Html
       transform
-      distanceFactor={1.2}
+      distanceFactor={8}
       center
       className={`w-48 rounded-md overflow-hidden ${
         currentPage === "store" ? "" : "opacity-0"
@@ -23,7 +23,7 @@ export const OverlayItem = ({
     >
       <img
         src={
-          "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729190976/hallow-story/rg9vaso49sags5ed51xs.jpg"
+          "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729535268/hackaton/xtjbfhanqsihbg9y4ntx.avif"
         }
         alt=""
       />
@@ -34,7 +34,7 @@ export const OverlayItem = ({
       <button
         className={`${bgColor} hover:bg-opacity-50 transition-colors duration-500 px-4 py-2 font-bold text-white w-full text-xs`}
       >
-        Add to cart ${price}
+        {price}
       </button>
     </Html>
   );

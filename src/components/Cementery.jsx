@@ -20,13 +20,52 @@ export function Cementery({ html, ...props }) {
         >
           {html && (
             <OverlayItem
-              position-x={0.8}
-              position-z={-0.8}
-              position-y={-0.5}
-              rotation-y={degToRad(45)}
-              title={"Tent"}
-              description={"2 person tent, rest assured you'll be dry."}
-              price={"129.99"}
+              position-x={-4}
+              position-z={-5}
+              position-y={8.5}
+              rotation-y={degToRad(90)}
+              title={"Midudev"}
+              description={
+                "Detective especialista. Tiene su propia conferencia de programacion. Muy ocupado, no creo que nos pueda ayudar"
+              }
+              price={"Elegir"}
+              bgColor={"bg-yellow-500"}
+              className={"transition delay-1000"}
+            />
+            // <HTML>
+            //   <h1>Midudev</h1>
+            // </HTML>
+          )}
+          {html && (
+            <OverlayItem
+              position-x={-4}
+              position-z={-0.5}
+              position-y={8.5}
+              rotation-y={degToRad(90)}
+              title={""}
+              description={
+                "Detective especialista. Director en DevX en Cloudinary. Esta muy ocupado trabajando, no creo que nos pueda ayudar"
+              }
+              price={"Elegir"}
+              bgColor={"bg-yellow-500"}
+              className={"transition delay-1000"}
+            />
+            // <HTML>
+            //   <h1>Midudev</h1>
+            // </HTML>
+          )}
+
+          {html && (
+            <OverlayItem
+              position-x={-4}
+              position-z={4}
+              position-y={8.5}
+              rotation-y={degToRad(90)}
+              title={"Colby"}
+              description={
+                "Detective especialista. Director en DevX en Cloudinary. Esta muy ocupado trabajando, no creo que nos pueda ayudar"
+              }
+              price={"Elegir"}
               bgColor={"bg-yellow-500"}
               className={"transition delay-1000"}
             />
