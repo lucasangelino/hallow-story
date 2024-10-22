@@ -4,7 +4,7 @@ import { currentPageAtom } from "../UI";
 import { useGameContext } from "../../hooks/useContext";
 import { TypeScriptLogo } from "../../logos";
 
-export const LevelTwo = () => {
+export const LevelThree = () => {
   const {
     gameLevel,
     setGameLevel,
@@ -16,104 +16,96 @@ export const LevelTwo = () => {
   const [points, setPoints] = useState(0);
   const questions = [
     {
-      question:
-        "¿Qué herramienta se usa para convertir TypeScript a JavaScript?",
+      question: "¿Qué es TypeScript?",
       answers: [
-        { text: "Webpack", correct: false },
-        { text: "TypeScript Compiler (tsc)", correct: true },
-        { text: "Babel", correct: false },
+        { text: "Un lenguaje de programación", correct: true },
+        { text: "Un navegador web", correct: false },
+        { text: "Un sistema operativo", correct: false },
+      ],
+      points: 100,
+    },
+    {
+      question: "¿TypeScript es un superconjunto de qué lenguaje?",
+      answers: [
+        { text: "JavaScript", correct: true },
+        { text: "Java", correct: false },
+        { text: "Python", correct: false },
+      ],
+      points: 100,
+    },
+    {
+      question: "¿Qué tipo de datos es `string` en TypeScript?",
+      answers: [
+        { text: "Un número", correct: false },
+        { text: "Una cadena de texto", correct: true },
+        { text: "Un booleano", correct: false },
+      ],
+      points: 100,
+    },
+    {
+      question: "¿Cómo se declara una variable en TypeScript?",
+      answers: [
+        { text: "let variableName: tipo", correct: true },
+        { text: "variableName: tipo", correct: false },
+        { text: "var variableName", correct: false },
+      ],
+      points: 100,
+    },
+    {
+      question: "¿TypeScript permite tipado estático?",
+      answers: [
+        { text: "Sí", correct: true },
+        { text: "No", correct: false },
       ],
       points: 100,
     },
     {
       question:
-        "¿Qué archivo es necesario para configurar las opciones del compilador de TypeScript?",
+        "¿Qué tipo de dato devuelve la función `Math.random()` en TypeScript?",
       answers: [
-        { text: "tsconfig.json", correct: true },
-        { text: "package.json", correct: false },
-        { text: "webpack.config.js", correct: false },
+        { text: "string", correct: false },
+        { text: "boolean", correct: false },
+        { text: "number", correct: true },
+      ],
+      points: 100,
+    },
+    {
+      question: "¿Cómo se define un array de números en TypeScript?",
+      answers: [
+        { text: "let numbers: number[]", correct: true },
+        { text: "let numbers: string[]", correct: false },
+        { text: "let numbers = []", correct: false },
       ],
       points: 100,
     },
     {
       question:
-        "¿Qué herramienta se puede usar junto con TypeScript para transpilar código moderno a versiones anteriores de JavaScript?",
+        "¿Cuál es la palabra clave para definir un tipo personalizado en TypeScript?",
       answers: [
-        { text: "Babel", correct: true },
-        { text: "Parcel", correct: false },
-        { text: "ESLint", correct: false },
+        { text: "interface", correct: false },
+        { text: "type", correct: true },
+        { text: "class", correct: false },
       ],
-      points: 150,
+      points: 100,
     },
     {
-      question:
-        "¿Qué editor de texto es comúnmente usado con soporte completo para TypeScript?",
+      question: "¿Qué significa `readonly` en TypeScript?",
       answers: [
-        { text: "VSCode", correct: true },
-        { text: "Sublime Text", correct: false },
-        { text: "Atom", correct: false },
+        { text: "Una propiedad que no puede ser modificada", correct: true },
+        { text: "Un método privado", correct: false },
+        { text: "Una constante global", correct: false },
       ],
       points: 100,
     },
     {
       question:
-        "¿Cuál es el linter más popular utilizado con TypeScript para mantener la calidad del código?",
+        "¿Qué operador se utiliza para definir un valor opcional en TypeScript?",
       answers: [
-        { text: "JSLint", correct: false },
-        { text: "ESLint", correct: true },
-        { text: "Prettier", correct: false },
-      ],
-      points: 150,
-    },
-    {
-      question:
-        "¿Qué herramienta puede formatear automáticamente tu código TypeScript?",
-      answers: [
-        { text: "Prettier", correct: true },
-        { text: "JSLint", correct: false },
-        { text: "Terser", correct: false },
+        { text: "?", correct: true },
+        { text: ":", correct: false },
+        { text: "!", correct: false },
       ],
       points: 100,
-    },
-    {
-      question:
-        "¿Qué herramienta permite hacer análisis estático de tipos para evitar errores en TypeScript?",
-      answers: [
-        { text: "TypeScript Compiler (tsc)", correct: true },
-        { text: "Webpack", correct: false },
-        { text: "Parcel", correct: false },
-      ],
-      points: 200,
-    },
-    {
-      question:
-        "¿Cuál de estas herramientas ayuda a empaquetar aplicaciones TypeScript?",
-      answers: [
-        { text: "Webpack", correct: true },
-        { text: "Gulp", correct: false },
-        { text: "Rollup", correct: true },
-      ],
-      points: 200,
-    },
-    {
-      question:
-        "¿Qué herramienta facilita la ejecución de tests en proyectos TypeScript?",
-      answers: [
-        { text: "Mocha", correct: false },
-        { text: "Jest", correct: true },
-        { text: "ESLint", correct: false },
-      ],
-      points: 150,
-    },
-    {
-      question:
-        "¿Qué plugin de ESLint permite verificar las reglas específicas de TypeScript?",
-      answers: [
-        { text: "eslint-plugin-typescript", correct: false },
-        { text: "eslint-plugin-tslint", correct: false },
-        { text: "eslint-plugin-@typescript-eslint", correct: true },
-      ],
-      points: 200,
     },
   ];
 
@@ -129,14 +121,14 @@ export const LevelTwo = () => {
     setPlayerBucket((prev) => ({
       ...prev,
       powers: prev.powers.map((power) => {
-        if (power.id === "typescript-power-tools") {
+        if (power.id === "typescript-power-junior") {
           return { ...power, isBlocked: false };
         }
         return power;
       }),
     }));
     setOpenChest(true);
-    setGameLevel(3);
+    setGameLevel(4);
   };
 
   if (currentQuestion >= questions.length) {
@@ -149,7 +141,7 @@ export const LevelTwo = () => {
         position-y={8.5}
         rotation-y={2}
         className={`overflow-hidden ${
-          gameLevel === 2 ? "" : "opacity-0"
+          gameLevel === 3 ? "" : "opacity-0"
         } transition-opacity duration-1000`}
       >
         <section className="rounded-md bg-orange-500 p-4">
@@ -179,14 +171,14 @@ export const LevelTwo = () => {
         position-y={8.5}
         rotation-y={2}
         className={`overflow-hidden ${
-          gameLevel === 2 ? "" : "opacity-0"
+          gameLevel === 3 ? "" : "opacity-0"
         } transition-opacity duration-1000`}
       >
         <h2 className="text-2xl text-white my-4">
           Gana y desbloquea encantamientos
         </h2>
         <span className="text-white text-xs bg-orange-500 p-1 px-2 rounded-full">
-          TypeScript Tools
+          TypeScript Junior
         </span>
         <h2 className="text-md text-white text-right">
           {points ? `Has sumado ${points} puntos` : ""}

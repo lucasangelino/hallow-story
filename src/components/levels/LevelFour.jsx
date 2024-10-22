@@ -4,7 +4,7 @@ import { currentPageAtom } from "../UI";
 import { useGameContext } from "../../hooks/useContext";
 import { TypeScriptLogo } from "../../logos";
 
-export const LevelTwo = () => {
+export const LevelFour = () => {
   const {
     gameLevel,
     setGameLevel,
@@ -17,101 +17,136 @@ export const LevelTwo = () => {
   const questions = [
     {
       question:
-        "¿Qué herramienta se usa para convertir TypeScript a JavaScript?",
+        "¿Qué tipo se usa para representar un valor que puede ser de cualquier tipo en TypeScript?",
       answers: [
-        { text: "Webpack", correct: false },
-        { text: "TypeScript Compiler (tsc)", correct: true },
-        { text: "Babel", correct: false },
-      ],
-      points: 100,
-    },
-    {
-      question:
-        "¿Qué archivo es necesario para configurar las opciones del compilador de TypeScript?",
-      answers: [
-        { text: "tsconfig.json", correct: true },
-        { text: "package.json", correct: false },
-        { text: "webpack.config.js", correct: false },
-      ],
-      points: 100,
-    },
-    {
-      question:
-        "¿Qué herramienta se puede usar junto con TypeScript para transpilar código moderno a versiones anteriores de JavaScript?",
-      answers: [
-        { text: "Babel", correct: true },
-        { text: "Parcel", correct: false },
-        { text: "ESLint", correct: false },
+        { text: "any", correct: true },
+        { text: "unknown", correct: false },
+        { text: "void", correct: false },
       ],
       points: 150,
     },
     {
       question:
-        "¿Qué editor de texto es comúnmente usado con soporte completo para TypeScript?",
+        "¿Cuál es la diferencia principal entre `unknown` y `any` en TypeScript?",
       answers: [
-        { text: "VSCode", correct: true },
-        { text: "Sublime Text", correct: false },
-        { text: "Atom", correct: false },
-      ],
-      points: 100,
-    },
-    {
-      question:
-        "¿Cuál es el linter más popular utilizado con TypeScript para mantener la calidad del código?",
-      answers: [
-        { text: "JSLint", correct: false },
-        { text: "ESLint", correct: true },
-        { text: "Prettier", correct: false },
-      ],
-      points: 150,
-    },
-    {
-      question:
-        "¿Qué herramienta puede formatear automáticamente tu código TypeScript?",
-      answers: [
-        { text: "Prettier", correct: true },
-        { text: "JSLint", correct: false },
-        { text: "Terser", correct: false },
-      ],
-      points: 100,
-    },
-    {
-      question:
-        "¿Qué herramienta permite hacer análisis estático de tipos para evitar errores en TypeScript?",
-      answers: [
-        { text: "TypeScript Compiler (tsc)", correct: true },
-        { text: "Webpack", correct: false },
-        { text: "Parcel", correct: false },
+        {
+          text: "`unknown` requiere comprobaciones antes de usarse",
+          correct: true,
+        },
+        {
+          text: "`any` permite comprobaciones de tipo más estrictas",
+          correct: false,
+        },
+        { text: "`unknown` es equivalente a `null`", correct: false },
       ],
       points: 200,
     },
     {
       question:
-        "¿Cuál de estas herramientas ayuda a empaquetar aplicaciones TypeScript?",
+        "¿Qué palabra clave se usa para especificar que un tipo o propiedad no puede cambiar después de su declaración?",
       answers: [
-        { text: "Webpack", correct: true },
-        { text: "Gulp", correct: false },
-        { text: "Rollup", correct: true },
+        { text: "const", correct: false },
+        { text: "readonly", correct: true },
+        { text: "static", correct: false },
+      ],
+      points: 150,
+    },
+    {
+      question: "¿Qué es un 'Intersection Type' en TypeScript?",
+      answers: [
+        {
+          text: "Un tipo que combina múltiples tipos usando `&`",
+          correct: true,
+        },
+        {
+          text: "Un tipo que combina múltiples tipos usando `|`",
+          correct: false,
+        },
+        {
+          text: "Un tipo que representa una lista de tipos compatibles",
+          correct: false,
+        },
       ],
       points: 200,
     },
     {
-      question:
-        "¿Qué herramienta facilita la ejecución de tests en proyectos TypeScript?",
+      question: "¿Qué significa `Partial<T>` en TypeScript?",
       answers: [
-        { text: "Mocha", correct: false },
-        { text: "Jest", correct: true },
-        { text: "ESLint", correct: false },
+        {
+          text: "Hace que todas las propiedades de un tipo sean opcionales",
+          correct: true,
+        },
+        {
+          text: "Hace que todas las propiedades de un tipo sean requeridas",
+          correct: false,
+        },
+        {
+          text: "Convierte todas las propiedades en `readonly`",
+          correct: false,
+        },
+      ],
+      points: 200,
+    },
+    {
+      question: "¿Cómo se define un tipo genérico en TypeScript?",
+      answers: [
+        { text: "function <T>(arg: T): T", correct: true },
+        { text: "function generic<T>(arg: T): any", correct: false },
+        { text: "let T = type", correct: false },
       ],
       points: 150,
     },
     {
       question:
-        "¿Qué plugin de ESLint permite verificar las reglas específicas de TypeScript?",
+        "¿Qué utilidad tiene la palabra clave `abstract` en TypeScript?",
       answers: [
-        { text: "eslint-plugin-typescript", correct: false },
-        { text: "eslint-plugin-tslint", correct: false },
-        { text: "eslint-plugin-@typescript-eslint", correct: true },
+        {
+          text: "Define una clase o método que no puede ser instanciado directamente",
+          correct: true,
+        },
+        {
+          text: "Define una clase que puede ser instanciada sin métodos concretos",
+          correct: false,
+        },
+        { text: "Hace que las propiedades sean inmutables", correct: false },
+      ],
+      points: 150,
+    },
+    {
+      question:
+        "¿Qué hace el operador `!` cuando se usa al final de una expresión en TypeScript?",
+      answers: [
+        {
+          text: "Indica que el valor no es `null` ni `undefined`",
+          correct: true,
+        },
+        { text: "Forza a que el valor sea `null`", correct: false },
+        { text: "Evita la ejecución de un bloque de código", correct: false },
+      ],
+      points: 150,
+    },
+    {
+      question:
+        "¿Cómo se puede combinar varios tipos en una sola variable en TypeScript?",
+      answers: [
+        { text: "Usando el operador `|` (Union Types)", correct: true },
+        { text: "Usando el operador `&` (Intersection Types)", correct: false },
+        { text: "Usando `extends`", correct: false },
+      ],
+      points: 150,
+    },
+    {
+      question: "¿Qué permite hacer el tipo `Mapped Type` en TypeScript?",
+      answers: [
+        {
+          text: "Permite crear nuevos tipos basados en la transformación de propiedades de otro tipo",
+          correct: true,
+        },
+        { text: "Permite iterar sobre un array de tipos", correct: false },
+        {
+          text: "Permite realizar operaciones matemáticas sobre tipos",
+          correct: false,
+        },
       ],
       points: 200,
     },
@@ -129,14 +164,14 @@ export const LevelTwo = () => {
     setPlayerBucket((prev) => ({
       ...prev,
       powers: prev.powers.map((power) => {
-        if (power.id === "typescript-power-tools") {
+        if (power.id === "typescript-power-semisenior") {
           return { ...power, isBlocked: false };
         }
         return power;
       }),
     }));
     setOpenChest(true);
-    setGameLevel(3);
+    setGameLevel(5);
   };
 
   if (currentQuestion >= questions.length) {
@@ -149,7 +184,7 @@ export const LevelTwo = () => {
         position-y={8.5}
         rotation-y={2}
         className={`overflow-hidden ${
-          gameLevel === 2 ? "" : "opacity-0"
+          gameLevel === 4 ? "" : "opacity-0"
         } transition-opacity duration-1000`}
       >
         <section className="rounded-md bg-orange-500 p-4">
@@ -179,14 +214,14 @@ export const LevelTwo = () => {
         position-y={8.5}
         rotation-y={2}
         className={`overflow-hidden ${
-          gameLevel === 2 ? "" : "opacity-0"
+          gameLevel === 4 ? "" : "opacity-0"
         } transition-opacity duration-1000`}
       >
         <h2 className="text-2xl text-white my-4">
           Gana y desbloquea encantamientos
         </h2>
         <span className="text-white text-xs bg-orange-500 p-1 px-2 rounded-full">
-          TypeScript Tools
+          TypeScript Junior
         </span>
         <h2 className="text-md text-white text-right">
           {points ? `Has sumado ${points} puntos` : ""}

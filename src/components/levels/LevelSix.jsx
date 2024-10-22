@@ -4,116 +4,131 @@ import { currentPageAtom } from "../UI";
 import { useGameContext } from "../../hooks/useContext";
 import { TypeScriptLogo } from "../../logos";
 
-export const LevelTwo = () => {
+export const LevelSix = () => {
   const {
     gameLevel,
     setGameLevel,
     setOpenChest,
     setPlayerBucket,
     setGlobalPoints,
+    setIsMidudevSafe,
   } = useGameContext();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [points, setPoints] = useState(0);
   const questions = [
     {
-      question:
-        "¿Qué herramienta se usa para convertir TypeScript a JavaScript?",
+      question: "¿Qué es un tipo recursivo en TypeScript?",
       answers: [
-        { text: "Webpack", correct: false },
-        { text: "TypeScript Compiler (tsc)", correct: true },
-        { text: "Babel", correct: false },
+        { text: "Un tipo que se refiere a sí mismo", correct: true },
+        {
+          text: "Un tipo que se calcula en tiempo de ejecución",
+          correct: false,
+        },
+        { text: "Un tipo que itera sobre objetos", correct: false },
       ],
-      points: 100,
+      points: 500,
     },
     {
-      question:
-        "¿Qué archivo es necesario para configurar las opciones del compilador de TypeScript?",
+      question: "¿Cuál es el propósito de `as const`?",
       answers: [
-        { text: "tsconfig.json", correct: true },
-        { text: "package.json", correct: false },
-        { text: "webpack.config.js", correct: false },
+        {
+          text: "Convierte una estructura en valores de solo lectura",
+          correct: true,
+        },
+        { text: "Cambia el tipo a `any`", correct: false },
+        { text: "Asigna un valor por defecto a un tipo", correct: false },
       ],
-      points: 100,
+      points: 500,
     },
     {
-      question:
-        "¿Qué herramienta se puede usar junto con TypeScript para transpilar código moderno a versiones anteriores de JavaScript?",
+      question: "¿Cómo se usa `infer` en un tipo condicional?",
       answers: [
-        { text: "Babel", correct: true },
-        { text: "Parcel", correct: false },
-        { text: "ESLint", correct: false },
+        {
+          text: "Permite capturar un tipo dentro de una expresión",
+          correct: true,
+        },
+        { text: "Define una propiedad inferida", correct: false },
+        { text: "Restringe el tipo a primitivos", correct: false },
       ],
-      points: 150,
+      points: 500,
     },
     {
-      question:
-        "¿Qué editor de texto es comúnmente usado con soporte completo para TypeScript?",
+      question: "¿Qué es un `Discriminated Union`?",
       answers: [
-        { text: "VSCode", correct: true },
-        { text: "Sublime Text", correct: false },
-        { text: "Atom", correct: false },
+        { text: "Una unión de tipos con una propiedad común", correct: true },
+        { text: "Una unión de tipos exclusivos", correct: false },
+        { text: "Una combinación de tipos `unknown` y `any`", correct: false },
       ],
-      points: 100,
+      points: 500,
     },
     {
-      question:
-        "¿Cuál es el linter más popular utilizado con TypeScript para mantener la calidad del código?",
+      question: "¿Para qué se usa `Exhaustiveness Checking` en TypeScript?",
       answers: [
-        { text: "JSLint", correct: false },
-        { text: "ESLint", correct: true },
-        { text: "Prettier", correct: false },
+        {
+          text: "Garantiza que todas las ramas de una unión estén cubiertas",
+          correct: true,
+        },
+        { text: "Restringe el uso de `any`", correct: false },
+        { text: "Asegura que el código compile sin errores", correct: false },
       ],
-      points: 150,
+      points: 500,
     },
     {
-      question:
-        "¿Qué herramienta puede formatear automáticamente tu código TypeScript?",
+      question: "¿Qué es un `branded type`?",
       answers: [
-        { text: "Prettier", correct: true },
-        { text: "JSLint", correct: false },
-        { text: "Terser", correct: false },
+        {
+          text: "Un tipo con una etiqueta única para diferenciación",
+          correct: true,
+        },
+        { text: "Un tipo basado en clases abstractas", correct: false },
+        { text: "Un tipo que combina objetos y arrays", correct: false },
       ],
-      points: 100,
+      points: 500,
     },
     {
-      question:
-        "¿Qué herramienta permite hacer análisis estático de tipos para evitar errores en TypeScript?",
+      question: "¿Qué permite hacer `Template Literal Types`?",
       answers: [
-        { text: "TypeScript Compiler (tsc)", correct: true },
-        { text: "Webpack", correct: false },
-        { text: "Parcel", correct: false },
+        {
+          text: "Construir tipos dinámicamente usando literales",
+          correct: true,
+        },
+        { text: "Generar arrays de tipos", correct: false },
+        { text: "Reutilizar tipos en funciones", correct: false },
       ],
-      points: 200,
+      points: 500,
     },
     {
-      question:
-        "¿Cuál de estas herramientas ayuda a empaquetar aplicaciones TypeScript?",
+      question: "¿Cómo funciona `Key Remapping` en tipos mapeados?",
       answers: [
-        { text: "Webpack", correct: true },
-        { text: "Gulp", correct: false },
-        { text: "Rollup", correct: true },
+        { text: "Permite cambiar las claves al mapear un tipo", correct: true },
+        { text: "Itera sobre claves y valores", correct: false },
+        { text: "Convierte claves en literales", correct: false },
       ],
-      points: 200,
+      points: 500,
     },
     {
-      question:
-        "¿Qué herramienta facilita la ejecución de tests en proyectos TypeScript?",
+      question: "¿Qué es un `Utility Type` en TypeScript?",
       answers: [
-        { text: "Mocha", correct: false },
-        { text: "Jest", correct: true },
-        { text: "ESLint", correct: false },
+        {
+          text: "Un tipo predefinido para manipular tipos existentes",
+          correct: true,
+        },
+        { text: "Un tipo definido por el usuario", correct: false },
+        { text: "Un tipo que solo acepta primitivos", correct: false },
       ],
-      points: 150,
+      points: 500,
     },
     {
-      question:
-        "¿Qué plugin de ESLint permite verificar las reglas específicas de TypeScript?",
+      question: "¿Qué significa `readonly` en parámetros de una función?",
       answers: [
-        { text: "eslint-plugin-typescript", correct: false },
-        { text: "eslint-plugin-tslint", correct: false },
-        { text: "eslint-plugin-@typescript-eslint", correct: true },
+        {
+          text: "Impide modificar la referencia dentro de la función",
+          correct: true,
+        },
+        { text: "Bloquea el paso de objetos", correct: false },
+        { text: "Convierte el parámetro en un tipo primitivo", correct: false },
       ],
-      points: 200,
+      points: 500,
     },
   ];
 
@@ -129,14 +144,14 @@ export const LevelTwo = () => {
     setPlayerBucket((prev) => ({
       ...prev,
       powers: prev.powers.map((power) => {
-        if (power.id === "typescript-power-tools") {
+        if (power.id === "typescript-power-ultimate") {
           return { ...power, isBlocked: false };
         }
         return power;
       }),
     }));
     setOpenChest(true);
-    setGameLevel(3);
+    setIsMidudevSafe(true);
   };
 
   if (currentQuestion >= questions.length) {
@@ -149,7 +164,7 @@ export const LevelTwo = () => {
         position-y={8.5}
         rotation-y={2}
         className={`overflow-hidden ${
-          gameLevel === 2 ? "" : "opacity-0"
+          gameLevel === 6 ? "" : "opacity-0"
         } transition-opacity duration-1000`}
       >
         <section className="rounded-md bg-orange-500 p-4">
@@ -179,14 +194,14 @@ export const LevelTwo = () => {
         position-y={8.5}
         rotation-y={2}
         className={`overflow-hidden ${
-          gameLevel === 2 ? "" : "opacity-0"
+          gameLevel === 6 ? "" : "opacity-0"
         } transition-opacity duration-1000`}
       >
         <h2 className="text-2xl text-white my-4">
           Gana y desbloquea encantamientos
         </h2>
         <span className="text-white text-xs bg-orange-500 p-1 px-2 rounded-full">
-          TypeScript Tools
+          TypeScript Junior
         </span>
         <h2 className="text-md text-white text-right">
           {points ? `Has sumado ${points} puntos` : ""}

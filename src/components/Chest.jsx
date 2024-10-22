@@ -1,5 +1,6 @@
 import { useGameContext } from "../hooks/useContext";
 import { GameContext } from "./GameContext";
+import JSConfetti from "js-confetti";
 
 export const Chest = () => {
   const {
@@ -9,12 +10,12 @@ export const Chest = () => {
     playerName,
     playerPicture,
     globalPoints,
+    isMidudevSafe,
   } = useGameContext();
 
   const unLockedPowers = playerBucket.powers.filter(
     (power) => !power.isBlocked
   );
-  console.log(unLockedPowers);
   return (
     <GameContext isOpen={openChest}>
       <section className="p-2 overflow-hidden z-50">
@@ -54,22 +55,25 @@ export const Chest = () => {
             );
           })}
         </section>
-        {/* <h3 className="text-xl">Posiones</h3>
-        <section className="grid grid-cols-2 gap-2">
-          {playerBucket.powers.map((power, index) => {
-            return (
-              <div key={index} className="rounded-lg cursor-pointer">
-                <img
-                  className="w-40 h-40"
-                  src={power.image}
-                  alt={power.description}
-                />
-                <p className="text-center">{power.name}</p>
-              </div>
-            );
-          })}
-        </section> */}
+        {isMidudevSafe && <FreeMidudevButton />}
       </section>
     </GameContext>
+  );
+};
+
+const FreeMidudevButton = () => {
+  const handleClick = () => {
+    const jsConfetti = new JSConfetti();
+    jsConfetti.addConfetti({
+      emojis: ["🎃", "👻", "💀", "🕷", "🕸"],
+    });
+  };
+  return (
+    <button
+      onClick={handleClick}
+      className="w-full bg-orange-500 p-2 rounded-md text-white font-bold"
+    >
+      Usar encantamientos y liberar a Midu
+    </button>
   );
 };

@@ -11,6 +11,10 @@ import { CharacterProfile } from "./charaters/CharacterProfile";
 import { useGameContext } from "../hooks/useContext";
 import { LevelOne } from "./levels/LevelOne";
 import { LevelTwo } from "./levels/LevelTwo";
+import { LevelThree } from "./levels/LevelThree";
+import { LevelFour } from "./levels/LevelFour";
+import { LevelFive } from "./levels/LevelFive";
+import { LevelSix } from "./levels/LevelSix";
 
 export function Cementery({ html, ...props }) {
   const { nodes, materials } = useGLTF("/models/CemeteryScene.glb");
@@ -79,6 +83,10 @@ export function Cementery({ html, ...props }) {
 
           {html && gameLevel === 1 && <LevelOne />}
           {html && gameLevel === 2 && <LevelTwo />}
+          {html && gameLevel === 3 && <LevelThree />}
+          {html && gameLevel === 4 && <LevelFour />}
+          {html && gameLevel === 5 && <LevelFive />}
+          {html && gameLevel === 6 && <LevelSix />}
         </mesh>
       </group>
     </group>
