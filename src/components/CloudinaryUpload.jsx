@@ -6,8 +6,8 @@ import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import { cloudName, uploadPreset } from "../cloudinary/config";
 import { useGameContext } from "../hooks/useContext";
 import "filepond/dist/filepond.min.css";
-import { cartoonify, gradientFade } from "@cloudinary/url-gen/actions/effect";
-import { symmetric } from "@cloudinary/url-gen/qualifiers/gradientFade";
+import { cartoonify } from "@cloudinary/url-gen/actions/effect";
+// import { symmetric } from "@cloudinary/url-gen/qualifiers/gradientFade";
 
 const cloudinary = new CD({
   cloud: {
