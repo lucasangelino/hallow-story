@@ -2,6 +2,7 @@ export const Scenes = {
   HOME: "HOM",
   INTO: "INTRO",
   CEMENTERY: "CEMENTERY",
+  CEMENTERY_TWO: "CEMENTERY_TWO",
   ENTRY_POINT: "ENTRY_POINT",
   LEVEL_1: "LEVEL_1",
 };

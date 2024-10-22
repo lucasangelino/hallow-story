@@ -3,6 +3,7 @@ import { Html } from "@react-three/drei";
 import { currentPageAtom } from "../UI";
 import { useGameContext } from "../../hooks/useContext";
 import { TypeScriptLogo } from "../../logos";
+import { Scenes } from "../scenes";
 
 export const LevelTwo = () => {
   const {
@@ -11,6 +12,7 @@ export const LevelTwo = () => {
     setOpenChest,
     setPlayerBucket,
     setGlobalPoints,
+    setCurrentPage,
   } = useGameContext();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [points, setPoints] = useState(0);
@@ -125,7 +127,7 @@ export const LevelTwo = () => {
   };
 
   const handleNextLevel = () => {
-    setGlobalPoints(points);
+    setGlobalPoints((prev) => prev + points);
     setPlayerBucket((prev) => ({
       ...prev,
       powers: prev.powers.map((power) => {
@@ -137,6 +139,8 @@ export const LevelTwo = () => {
     }));
     setOpenChest(true);
     setGameLevel(3);
+    console.log("Next level");
+    setCurrentPage(Scenes.CEMENTERY_TWO);
   };
 
   if (currentQuestion >= questions.length) {
@@ -149,7 +153,7 @@ export const LevelTwo = () => {
         position-y={8.5}
         rotation-y={2}
         className={`overflow-hidden ${
-          gameLevel === 1 ? "" : "opacity-0"
+          gameLevel === 2 ? "" : "opacity-0"
         } transition-opacity duration-1000`}
       >
         <section className="rounded-md bg-orange-500 p-4">

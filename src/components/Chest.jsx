@@ -14,7 +14,6 @@ export const Chest = () => {
   const unLockedPowers = playerBucket.powers.filter(
     (power) => !power.isBlocked
   );
-  console.log(unLockedPowers);
   return (
     <GameContext isOpen={openChest}>
       <section className="p-2 overflow-hidden z-50">
