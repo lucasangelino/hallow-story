@@ -1,16 +1,28 @@
 import React, { useState } from "react";
 import { FilePond } from "react-filepond";
-import { Cloudinary } from "@cloudinary/url-gen";
+import { Cloudinary as CD } from "@cloudinary/url-gen";
 import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import { cloudName, uploadPreset } from "../cloudinary/config";
 import { useGameContext } from "../hooks/useContext";
 import "filepond/dist/filepond.min.css";
+import { cartoonify, gradientFade } from "@cloudinary/url-gen/actions/effect";
+import { symmetric } from "@cloudinary/url-gen/qualifiers/gradientFade";
+
+const cloudinary = new CD({
+  cloud: {
+    cloudName: "lucasangelinodev",
+  },
+  url: {
+    secure: true,
+  },
+});
 
 export function CloudinaryUpload() {
   const [image, setImage] = useState("");
 
   const baseUrl = `https://api.cloudinary.com/v1_1/${cloudName}`;
+  const uploadedUrl = `https://res.cloudinary.com/${cloudName}/image/upload`;
   const { setPlayerPicture } = useGameContext();
   const process = (
     fieldName,
@@ -46,7 +58,7 @@ export function CloudinaryUpload() {
     successCallback,
     errorCallback,
   }) => {
-    const url = `${baseUrl}/image/upload`;
+    const url = `${baseUrl}/image/upload/`;
 
     const formData = new FormData();
     formData.append(fieldName, file);
@@ -55,6 +67,11 @@ export function CloudinaryUpload() {
     formData.append("file", file); // TODO: Change to image only
 
     const request = new XMLHttpRequest();
+    request.headers = {
+      "Content-Type": "multipart/form-data",
+      // cors
+      "Access-Control-Allow-Origin": "*",
+    };
     request.open("POST", url);
 
     request.upload.onprogress = (e) => {
@@ -63,10 +80,24 @@ export function CloudinaryUpload() {
 
     request.onload = () => {
       if (request.status >= 200 && request.status < 300) {
-        const { delete_token: deleteToken, secure_url: cloudinary_url } =
-          JSON.parse(request.response);
-        console.log(cloudinary_url);
-        setPlayerPicture(cloudinary_url);
+        const {
+          delete_token: deleteToken,
+          secure_url: cloudinary_url,
+          public_id: publicId,
+        } = JSON.parse(request.response);
+        console.log(publicId);
+        const cartoonedImage = cloudinary
+          .image(publicId)
+          .effect(
+            gradientFade()
+              .strength(10)
+              .type(symmetric())
+              .horizontalStartPoint(0.2)
+              .verticalStartPoint(0.4)
+          )
+          .toURL();
+        console.log(cartoonedImage);
+        setPlayerPicture(cartoonedImage);
         successCallback(deleteToken);
       } else {
         errorCallback(request.responseText);

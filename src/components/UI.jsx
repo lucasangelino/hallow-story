@@ -72,13 +72,13 @@ export const UI = () => {
           {playerName.length > 0 && (
             <button
               onClick={() => {
-                setIntroStep(2);
+                setIntroStep(3);
               }}
               className="pointer-events-auto uppercase py-4 px-8 bg-orange-400
                     text-white font-black rounded-full hover:bg-orange-600
                     cursor-pointer transition-colors duration-500 my-5"
             >
-              Continuar to step 2
+              Continuar
             </button>
           )}
         </section>
@@ -86,38 +86,38 @@ export const UI = () => {
     );
   }
 
-  if (introStep === 2) {
-    return (
-      <div className="fixed inset-0 pointer-events-none">
-        <section
-          className={`flex w-full h-full flex-col items-center justify-center
-                    duration-500
-                    ${currentPage === "ENTRY_POINT" ? "" : "opacity-0"}`}
-        >
-          <div className="h-[66%]"></div>
+  // if (introStep === 2) {
+  //   return (
+  //     <div className="fixed inset-0 pointer-events-none">
+  //       <section
+  //         className={`flex w-full h-full flex-col items-center justify-center
+  //                   duration-500
+  //                   ${currentPage === "ENTRY_POINT" ? "" : "opacity-0"}`}
+  //       >
+  //         <div className="h-[66%]"></div>
 
-          <section
-            className="pointer-events-auto uppercase p-1
-                    text-white font-black rounded-xl
-                    cursor-pointer transition-colors duration-500 my-5 w-[500px]"
-          >
-            {/* <CloudinaryUpload /> */}
-            <button
-              onClick={() => {
-                // setCurrentPage("CEMENTERY");
-                setIntroStep(3);
-              }}
-              className="pointer-events-auto uppercase py-4 px-8 bg-orange-400
-                    text-white font-black rounded-full hover:bg-orange-600
-                    cursor-pointer transition-colors duration-500 my-5"
-            >
-              Continuar to step 3
-            </button>
-          </section>
-        </section>
-      </div>
-    );
-  }
+  //         <section
+  //           className="pointer-events-auto uppercase p-1
+  //                   text-white font-black rounded-xl
+  //                   cursor-pointer transition-colors duration-500 my-5 w-[500px]"
+  //         >
+  //           {/* <CloudinaryUpload /> */}
+  //           <button
+  //             onClick={() => {
+  //               // setCurrentPage("CEMENTERY");
+  //               setIntroStep(3);
+  //             }}
+  //             className="pointer-events-auto uppercase py-4 px-8 bg-orange-400
+  //                   text-white font-black rounded-full hover:bg-orange-600
+  //                   cursor-pointer transition-colors duration-500 my-5"
+  //           >
+  //             Continuar
+  //           </button>
+  //         </section>
+  //       </section>
+  //     </div>
+  //   );
+  // }
 
   if (introStep === 3) {
     return (
@@ -134,7 +134,7 @@ export const UI = () => {
                     text-white font-black rounded-xl
                     cursor-pointer transition-colors duration-500 my-5 w-[500px]"
           >
-            {/* <CloudinaryUpload /> */}
+            <CloudinaryUpload />
             <button
               onClick={() => {
                 setEnableControls(true);
@@ -145,7 +145,7 @@ export const UI = () => {
                     text-white font-black rounded-full hover:bg-orange-600
                     cursor-pointer transition-colors duration-500 my-5"
             >
-              current page step 3sss
+              Jugar
             </button>
           </section>
         </section>

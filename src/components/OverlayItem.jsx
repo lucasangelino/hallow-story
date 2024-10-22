@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { currentPageAtom } from "./UI";
 import { Html } from "@react-three/drei";
 import { useAtom } from "jotai";

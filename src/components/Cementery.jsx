@@ -9,13 +9,16 @@ import { degToRad } from "three/src/math/MathUtils";
 import { HTML } from "./HTML";
 import { CharacterProfile } from "./charaters/CharacterProfile";
 import { useGameContext } from "../hooks/useContext";
+import { LevelOne } from "./levels/LevelOne";
 
 export function Cementery({ html, ...props }) {
   const { nodes, materials } = useGLTF("/models/CemeteryScene.glb");
-  const { playerName, setOpenChest } = useGameContext();
+  const { playerName, setOpenChest, setGameLevel, gameLevel, playerPicture } =
+    useGameContext();
 
   const handleClick = () => {
-    setOpenChest(true);
+    // setOpenChest(true);
+    setGameLevel(1);
   };
 
   return (
@@ -26,7 +29,7 @@ export function Cementery({ html, ...props }) {
           geometry={nodes.Cementary_mesh.geometry}
           material={materials.Cementary_mat1}
         >
-          {html && (
+          {html && gameLevel === 0 && (
             <CharacterProfile
               position-x={-4}
               position-z={-1}
@@ -43,7 +46,7 @@ export function Cementery({ html, ...props }) {
               }
             />
           )}
-          {html && (
+          {html && gameLevel === 0 && (
             <CharacterProfile
               position-x={-4}
               position-z={-5}
@@ -53,13 +56,10 @@ export function Cementery({ html, ...props }) {
                 "Detective principiante. Sabe algo de programacion. Podria ayudarnos a resolver el caso, pero tendras que ayudarlo con los retos."
               }
               onClick={handleClick}
-              imgSrc={
-                "https://res.cloudinary.com/lucasangelinodev/image/upload/v1729538143/hackaton/kobfs5skxazebupx4qww.avif"
-              }
+              imgSrc={playerPicture}
             />
           )}
-
-          {html && (
+          {html && gameLevel === 0 && (
             <CharacterProfile
               position-x={-4}
               position-z={3}
@@ -75,6 +75,8 @@ export function Cementery({ html, ...props }) {
               }
             />
           )}
+
+          <LevelOne />
         </mesh>
       </group>
     </group>
