@@ -88,13 +88,7 @@ export function CloudinaryUpload() {
         console.log(publicId);
         const cartoonedImage = cloudinary
           .image(publicId)
-          .effect(
-            gradientFade()
-              .strength(10)
-              .type(symmetric())
-              .horizontalStartPoint(0.2)
-              .verticalStartPoint(0.4)
-          )
+          .effect(cartoonify().lineStrength(70).colorReductionLevel(80))
           .toURL();
         console.log(cartoonedImage);
         setPlayerPicture(cartoonedImage);
