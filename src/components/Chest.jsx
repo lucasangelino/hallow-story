@@ -31,7 +31,7 @@ export const Chest = () => {
             <span className="text-md font-bold">{playerName}</span>
           </div>
         </section>
-        <h3 className="text-xl">Poderes</h3>
+        <h3 className="text-xl">Encantamientos</h3>
         <section className="grid grid-cols-2 gap-2 mb-10">
           {playerBucket.powers.map((power, index) => {
             return (

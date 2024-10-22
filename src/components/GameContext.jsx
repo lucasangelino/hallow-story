@@ -10,8 +10,7 @@ export const GameContext = ({ children, isOpen }) => {
       <section
         className="absolute bottom-0 right-0 bg-slate-300 h-screen p-4 
                           bg-[url('/images/drawerbackground.avif')] w-96
-                          overflow-y-scroll
-                          "
+                          overflow-y-scroll"
       >
         {children}
       </section>
