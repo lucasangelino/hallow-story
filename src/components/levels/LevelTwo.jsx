@@ -4,7 +4,7 @@ import { currentPageAtom } from "../UI";
 import { useGameContext } from "../../hooks/useContext";
 import { TypeScriptLogo } from "../../logos";
 
-export const LevelOne = () => {
+export const LevelTwo = () => {
   const {
     gameLevel,
     setGameLevel,
@@ -17,112 +17,103 @@ export const LevelOne = () => {
   const questions = [
     {
       question:
-        "¿En qué año se lanzó la primera versión pública de TypeScript?",
+        "¿Qué herramienta se usa para convertir TypeScript a JavaScript?",
       answers: [
-        { text: "2011", correct: false },
-        { text: "2012", correct: true },
-        { text: "2013", correct: false },
+        { text: "Webpack", correct: false },
+        { text: "TypeScript Compiler (tsc)", correct: true },
+        { text: "Babel", correct: false },
       ],
       points: 100,
     },
     {
       question:
-        "¿Cuál fue la versión inicial de TypeScript lanzada públicamente?",
+        "¿Qué archivo es necesario para configurar las opciones del compilador de TypeScript?",
       answers: [
-        { text: "0.8", correct: true },
-        { text: "1.0", correct: false },
-        { text: "2.0", correct: false },
+        { text: "tsconfig.json", correct: true },
+        { text: "package.json", correct: false },
+        { text: "webpack.config.js", correct: false },
       ],
-      points: 200,
+      points: 100,
     },
     {
       question:
-        "¿Quién fue el principal arquitecto detrás de la creación de TypeScript?",
+        "¿Qué herramienta se puede usar junto con TypeScript para transpilar código moderno a versiones anteriores de JavaScript?",
       answers: [
-        { text: "Anders Hejlsberg", correct: true },
-        { text: "Brendan Eich", correct: false },
-        { text: "Guido van Rossum", correct: false },
+        { text: "Babel", correct: true },
+        { text: "Parcel", correct: false },
+        { text: "ESLint", correct: false },
       ],
       points: 150,
     },
     {
       question:
-        "¿En qué conferencia fue presentado oficialmente TypeScript al público?",
+        "¿Qué editor de texto es comúnmente usado con soporte completo para TypeScript?",
       answers: [
-        { text: "Microsoft Build 2012", correct: false },
-        { text: "JSConf 2012", correct: false },
-        { text: "TechEd 2012", correct: true },
+        { text: "VSCode", correct: true },
+        { text: "Sublime Text", correct: false },
+        { text: "Atom", correct: false },
       ],
-      points: 250,
+      points: 100,
     },
     {
       question:
-        "¿Cuál fue la principal razón para la creación de TypeScript según Microsoft?",
+        "¿Cuál es el linter más popular utilizado con TypeScript para mantener la calidad del código?",
       answers: [
-        {
-          text: "Superar las limitaciones de JavaScript para grandes aplicaciones",
-          correct: true,
-        },
-        {
-          text: "Mejorar la velocidad de ejecución de JavaScript",
-          correct: false,
-        },
-        { text: "Simplificar la programación funcional", correct: false },
+        { text: "JSLint", correct: false },
+        { text: "ESLint", correct: true },
+        { text: "Prettier", correct: false },
       ],
       points: 150,
     },
     {
       question:
-        "¿En qué versión de TypeScript se introdujo el soporte para JSX?",
+        "¿Qué herramienta puede formatear automáticamente tu código TypeScript?",
       answers: [
-        { text: "1.6", correct: true },
-        { text: "2.0", correct: false },
-        { text: "1.3", correct: false },
+        { text: "Prettier", correct: true },
+        { text: "JSLint", correct: false },
+        { text: "Terser", correct: false },
+      ],
+      points: 100,
+    },
+    {
+      question:
+        "¿Qué herramienta permite hacer análisis estático de tipos para evitar errores en TypeScript?",
+      answers: [
+        { text: "TypeScript Compiler (tsc)", correct: true },
+        { text: "Webpack", correct: false },
+        { text: "Parcel", correct: false },
       ],
       points: 200,
     },
     {
       question:
-        "¿Qué característica importante se introdujo en TypeScript 2.0?",
+        "¿Cuál de estas herramientas ayuda a empaquetar aplicaciones TypeScript?",
       answers: [
-        {
-          text: "Control de null y undefined (Strict Null Checks)",
-          correct: true,
-        },
-        { text: "Decorators", correct: false },
-        { text: "Tipado de 'Unknown'", correct: false },
-      ],
-      points: 250,
-    },
-    {
-      question:
-        "¿Qué framework popular influyó en el crecimiento de TypeScript al adoptarlo en su núcleo?",
-      answers: [
-        { text: "React", correct: false },
-        { text: "Angular", correct: true },
-        { text: "Vue", correct: false },
+        { text: "Webpack", correct: true },
+        { text: "Gulp", correct: false },
+        { text: "Rollup", correct: true },
       ],
       points: 200,
     },
     {
       question:
-        "¿En qué versión de TypeScript se añadió soporte para async/await?",
+        "¿Qué herramienta facilita la ejecución de tests en proyectos TypeScript?",
       answers: [
-        { text: "1.7", correct: true },
-        { text: "2.1", correct: false },
-        { text: "2.4", correct: false },
+        { text: "Mocha", correct: false },
+        { text: "Jest", correct: true },
+        { text: "ESLint", correct: false },
       ],
-      points: 200,
+      points: 150,
     },
     {
       question:
-        "¿Qué versión de TypeScript introdujo el soporte para el tipo 'Unknown'?",
+        "¿Qué plugin de ESLint permite verificar las reglas específicas de TypeScript?",
       answers: [
-        { text: "3.0", correct: true },
-        { text: "2.8", correct: false },
-        { text: "2.5", correct: false },
+        { text: "eslint-plugin-typescript", correct: false },
+        { text: "eslint-plugin-tslint", correct: false },
+        { text: "eslint-plugin-@typescript-eslint", correct: true },
       ],
-      points: 300,
+      points: 200,
     },
   ];
 
@@ -138,14 +129,14 @@ export const LevelOne = () => {
     setPlayerBucket((prev) => ({
       ...prev,
       powers: prev.powers.map((power) => {
-        if (power.id === "typescript-power-story") {
+        if (power.id === "typescript-power-tools") {
           return { ...power, isBlocked: false };
         }
         return power;
       }),
     }));
     setOpenChest(true);
-    setGameLevel(2);
+    setGameLevel(3);
   };
 
   if (currentQuestion >= questions.length) {
@@ -188,14 +179,14 @@ export const LevelOne = () => {
         position-y={8.5}
         rotation-y={2}
         className={`overflow-hidden ${
-          gameLevel === 1 ? "" : "opacity-0"
+          gameLevel === 2 ? "" : "opacity-0"
         } transition-opacity duration-1000`}
       >
         <h2 className="text-2xl text-white my-4">
           Gana y desbloquea encantamientos
         </h2>
         <span className="text-white text-xs bg-orange-500 p-1 px-2 rounded-full">
-          Historia de TypeScript
+          TypeScript Tools
         </span>
         <h2 className="text-md text-white text-right">
           {points ? `Has sumado ${points} puntos` : ""}

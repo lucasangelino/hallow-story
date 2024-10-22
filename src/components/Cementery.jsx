@@ -10,6 +10,7 @@ import { HTML } from "./HTML";
 import { CharacterProfile } from "./charaters/CharacterProfile";
 import { useGameContext } from "../hooks/useContext";
 import { LevelOne } from "./levels/LevelOne";
+import { LevelTwo } from "./levels/LevelTwo";
 
 export function Cementery({ html, ...props }) {
   const { nodes, materials } = useGLTF("/models/CemeteryScene.glb");
@@ -76,7 +77,8 @@ export function Cementery({ html, ...props }) {
             />
           )}
 
-          <LevelOne />
+          {html && gameLevel === 1 && <LevelOne />}
+          {html && gameLevel === 2 && <LevelTwo />}
         </mesh>
       </group>
     </group>
