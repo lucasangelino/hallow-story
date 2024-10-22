@@ -94,14 +94,6 @@ export const Experience = () => {
           <RenderTexture attach={"map"}>
             <color attach="background" args={["red"]} />
             <Environment preset="sunset" />
-            {/* <Float floatIntensity={4} rotationIntensity={5}>
-              <Camping
-                scale={1.6}
-                rotation-y={-degToRad(25)}
-                rotation-x={degToRad(40)}
-                position-y={-0.5}
-              />
-            </Float> */}
           </RenderTexture>
         </meshBasicMaterial>
       </Text>
