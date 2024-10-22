@@ -16,40 +16,113 @@ export const LevelOne = () => {
   const [points, setPoints] = useState(0);
   const questions = [
     {
-      question: "¿En que año se creo TypeSccript?",
+      question:
+        "¿En qué año se lanzó la primera versión pública de TypeScript?",
       answers: [
-        { text: "2002", correct: false },
-        { text: "2005", correct: true },
-        { text: "2019", correct: false },
+        { text: "2011", correct: false },
+        { text: "2012", correct: true },
+        { text: "2013", correct: false },
       ],
       points: 100,
     },
     {
-      question: "¿En que año se creo JavaScript?",
+      question:
+        "¿Cuál fue la versión inicial de TypeScript lanzada públicamente?",
       answers: [
-        { text: "2002", correct: false },
-        { text: "2005", correct: true },
-        { text: "2019", correct: false },
+        { text: "0.8", correct: true },
+        { text: "1.0", correct: false },
+        { text: "2.0", correct: false },
       ],
-      points: 100,
+      points: 200,
     },
     {
-      question: "¿En que año se creo TypeSccript?",
+      question:
+        "¿Quién fue el principal arquitecto detrás de la creación de TypeScript?",
       answers: [
-        { text: "2002", correct: false },
-        { text: "2005", correct: true },
-        { text: "2019", correct: false },
+        { text: "Anders Hejlsberg", correct: true },
+        { text: "Brendan Eich", correct: false },
+        { text: "Guido van Rossum", correct: false },
       ],
-      points: 100,
+      points: 150,
     },
     {
-      question: "¿En que año se creo TypeSccript?",
+      question:
+        "¿En qué conferencia fue presentado oficialmente TypeScript al público?",
       answers: [
-        { text: "2002", correct: false },
-        { text: "2005", correct: true },
-        { text: "2019", correct: false },
+        { text: "Microsoft Build 2012", correct: false },
+        { text: "JSConf 2012", correct: false },
+        { text: "TechEd 2012", correct: true },
       ],
-      points: 100,
+      points: 250,
+    },
+    {
+      question:
+        "¿Cuál fue la principal razón para la creación de TypeScript según Microsoft?",
+      answers: [
+        {
+          text: "Superar las limitaciones de JavaScript para grandes aplicaciones",
+          correct: true,
+        },
+        {
+          text: "Mejorar la velocidad de ejecución de JavaScript",
+          correct: false,
+        },
+        { text: "Simplificar la programación funcional", correct: false },
+      ],
+      points: 150,
+    },
+    {
+      question:
+        "¿En qué versión de TypeScript se introdujo el soporte para JSX?",
+      answers: [
+        { text: "1.6", correct: true },
+        { text: "2.0", correct: false },
+        { text: "1.3", correct: false },
+      ],
+      points: 200,
+    },
+    {
+      question:
+        "¿Qué característica importante se introdujo en TypeScript 2.0?",
+      answers: [
+        {
+          text: "Control de null y undefined (Strict Null Checks)",
+          correct: true,
+        },
+        { text: "Decorators", correct: false },
+        { text: "Tipado de 'Unknown'", correct: false },
+      ],
+      points: 250,
+    },
+    {
+      question:
+        "¿Qué framework popular influyó en el crecimiento de TypeScript al adoptarlo en su núcleo?",
+      answers: [
+        { text: "React", correct: false },
+        { text: "Angular", correct: true },
+        { text: "Vue", correct: false },
+      ],
+      points: 200,
+    },
+    {
+      question:
+        "¿En qué versión de TypeScript se añadió soporte para async/await?",
+      answers: [
+        { text: "1.7", correct: true },
+        { text: "2.1", correct: false },
+        { text: "2.4", correct: false },
+      ],
+      points: 200,
+    },
+    {
+      question:
+        "¿Qué versión de TypeScript introdujo el soporte para el tipo 'Unknown'?",
+      answers: [
+        { text: "3.0", correct: true },
+        { text: "2.8", correct: false },
+        { text: "2.5", correct: false },
+      ],
+      points: 300,
     },
   ];
 
@@ -118,8 +191,12 @@ export const LevelOne = () => {
           gameLevel === 1 ? "" : "opacity-0"
         } transition-opacity duration-1000`}
       >
-        <h2 className="text-2xl text-white">Gana y suma puntos</h2>
-        <h2 className="text-md text-white">{points ? points : ""}</h2>
+        <h2 className="text-2xl text-white my-4">
+          Gana y desbloquea encantamientos
+        </h2>
+        <h2 className="text-md text-white">
+          {points ? `Has sumado ${points} puntos` : ""}
+        </h2>
         <section className="flex flex-col gap-4 rounded-md bg-orange-500 p-4">
           <h3 className="text-white text-2xl">
             {questions[currentQuestion].question}
@@ -129,7 +206,7 @@ export const LevelOne = () => {
               onClick={() =>
                 handleAnswer(questions[currentQuestion].answers[0].correct)
               }
-              className="flex flex-col gap-4 p-2 hover:bg-orange-700 hover:text-white rounded-md"
+              className="flex flex-col gap-4 p-2 hover:bg-orange-600 hover:text-white rounded-md"
             >
               {questions[currentQuestion].answers[0].text}
             </button>
