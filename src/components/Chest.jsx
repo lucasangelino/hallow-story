@@ -36,10 +36,10 @@ export const Chest = () => {
             <span className="text-md font-bold">{playerName}</span>
           </div>
         </section>
+        <h3 className="text-xl">Encantamientos</h3>
         <section>
           <h3 className="text-xl my-5 bg-orange-500 text-white p-2 rounded-md">{`Tienes ${unLockedPowers.length}/6 encantamientos para salvar a Midu.`}</h3>
         </section>
-        <h3 className="text-xl">Encantamientos</h3>
         <section className="grid grid-cols-2 gap-2 mb-10">
           {playerBucket.powers.map((power, index) => {
             return (
@@ -49,7 +49,7 @@ export const Chest = () => {
                   src={power.image}
                   alt={power.description}
                 />
-                <p className="text-center">{power.name}</p>
+                <p className={`text-center`}>{power.name}</p>
               </div>
             );
           })}

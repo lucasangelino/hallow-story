@@ -163,7 +163,7 @@ export const LevelOne = () => {
       >
         <section className="rounded-md bg-orange-500 p-4">
           <h2 className="text-2xl text-white">
-            {points > 300 ? "Bien hecho!" : "Porias hacerlo mejor!"}
+            {points > 1500 ? "Bien hecho!" : "Porias hacerlo mejor!"}
           </h2>
           <h2 className="text-md text-white">{`Has sumado ${points} puntos`}</h2>
           <h3 className="text-md text-white"> y has desbloqueado un poder</h3>
