@@ -11,6 +11,8 @@
 Un proyecto creado para la Hackaron Cloudinary-Midudev.
 Creado con ❤️ por Lucas Angelino (AKA Pretoriun en Twitch/Discord)
 
+#### Este juego fue creado exclusivamente para la Hackaton, siendo programado lo mas rapido posible. Esta en desarrollo, tiene que recibir mejoras. Debajo hay un TODO List para poder realizar una PR.
+
 ## Galeria
 ![hackaton4](https://github.com/user-attachments/assets/7096017e-549f-4682-9260-361d6f7373ed)
 
