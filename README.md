@@ -1,7 +1,9 @@
-
+<div styles="display:flex;">
+  
 ![Hackaton](https://img.shields.io/badge/Midudev-Hackaton-0099ff)
 
 ![Cloudinary](https://img.shields.io/badge/Cloudinary-Hackaton-8A2BE2)
+</div>
 
 
 # Halllow Story
