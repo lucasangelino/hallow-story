@@ -9,6 +9,7 @@
 # Halllow Story
 
 Un proyecto creado para la Hackaron Cloudinary-Midudev.
+Creado con ❤️ por Lucas Angelino (AKA Pretoriun en Twitch/Discord)
 
 ## Galeria
 ![hackaton4](https://github.com/user-attachments/assets/7096017e-549f-4682-9260-361d6f7373ed)
