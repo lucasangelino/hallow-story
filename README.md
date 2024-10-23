@@ -37,6 +37,8 @@ El proyecto utiliza:
 - La API de Cloudinary para hostear todas las imagenes y realizar las transformaciones.
 
 ## TODO List
+- Mejorar Performance de los Canvas
+- Fixear el inicio del juego
 - Mover cada nivel a un Canvas nuevo para poder jugar en diferentes escenarios
 - Separar el GameContext en diferentes contextos mas granulares
 - Considerar utilizar una biblioteca de gestion de estado (como Jotai / Zuztand) en vez de utilizar Context API
