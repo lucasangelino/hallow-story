@@ -11,7 +11,14 @@
 Un proyecto creado para la Hackaron Cloudinary-Midudev.
 Creado con ❤️ por Lucas Angelino (AKA Pretoriun en Twitch/Discord)
 
-#### Este juego fue creado exclusivamente para la Hackaton, siendo programado lo mas rapido posible. Esta en desarrollo, tiene que recibir mejoras. Debajo hay un TODO List para poder realizar una PR.
+
+## Features
+- Transformacion de imagenes con Cloudinary
+- Animacion con objetos 3D
+- Soporte para VR
+- 6 Niveles de juego
+- Desbloqueo de poderes y encantamientos
+
 
 ## Galeria
 ![hackaton4](https://github.com/user-attachments/assets/7096017e-549f-4682-9260-361d6f7373ed)
@@ -23,13 +30,6 @@ Creado con ❤️ por Lucas Angelino (AKA Pretoriun en Twitch/Discord)
 ![hackaton7](https://github.com/user-attachments/assets/a71d036f-da56-42ba-9b75-24e217b321a5)
 
 ![hackaton6](https://github.com/user-attachments/assets/bc2cf0bf-bea2-4be3-afdd-05bc08a5022f)
-
-## Features
-- Transformacion de imagenes con Cloudinary
-- Animacion con objetos 3D
-- Soporte para VR
-- 6 Niveles de juego
-- Desbloqueo de poderes y encantamientos
 
 ## Development
 
@@ -46,3 +46,5 @@ El proyecto utiliza:
 - Separar el GameContext en diferentes contextos mas granulares
 - Considerar utilizar una biblioteca de gestion de estado (como Jotai / Zuztand) en vez de utilizar Context API
 - Mejorar la componentizacion
+
+#### Este juego fue creado exclusivamente para la Hackaton, siendo programado lo mas rapido posible. Esta en desarrollo, tiene que recibir mejoras. Debajo hay un TODO List para poder realizar una PR.
