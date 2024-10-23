@@ -19,6 +19,12 @@ Un proyecto creado para la Hackaron Cloudinary-Midudev.
 
 ![hackaton6](https://github.com/user-attachments/assets/bc2cf0bf-bea2-4be3-afdd-05bc08a5022f)
 
+## Features
+- Transformacion de imagenes con Cloudinary
+- Animacion con objetos 3D
+- Soporte para VR
+- 6 Niveles de juego
+- Desbloqueo de poderes y encantamientos
 
 ## Development
 
