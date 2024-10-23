@@ -17,7 +17,7 @@ export const AppProvider = ({ children }) => {
   const [enableControls, setEnableControls] = useState(false);
   const [gameLevel, setGameLevel] = useState(0);
   const [globalPoints, setGlobalPoints] = useState(0);
-  const [isMidudevSafe, setIsMidudevSafe] = useState(true);
+  const [isMidudevSafe, setIsMidudevSafe] = useState(false);
   const [playerBucket, setPlayerBucket] = useState({
     poisons: [],
     powers: [
