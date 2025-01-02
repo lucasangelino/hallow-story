@@ -12,7 +12,6 @@
 Un proyecto creado para la Hackaron Cloudinary-Midudev.
 Creado con ❤️ por Lucas Angelino (AKA Pretoriun en Twitch/Discord)
 
-
 ## Features
 - Transformacion de imagenes con Cloudinary
 - Animacion con objetos 3D
