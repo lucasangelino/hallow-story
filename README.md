@@ -19,8 +19,6 @@ Creado con ❤️ por Lucas Angelino (AKA Pretoriun en Twitch/Discord)
 - 6 Niveles de juego
 - Desbloqueo de poderes y encantamientos
 
-
-## Galeria
 ![hackaton4](https://github.com/user-attachments/assets/7096017e-549f-4682-9260-361d6f7373ed)
 
 ![hackaton1](https://github.com/user-attachments/assets/4aafaf8c-12a3-40d4-9f75-8b8094da886a)
